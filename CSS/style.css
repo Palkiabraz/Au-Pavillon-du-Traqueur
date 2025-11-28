@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --nav-opacity: 0.75;
+}
+
+@font-face {
+    font-family: Lifecraft;
+    src: url(./Police/LifeCraft_Font.ttf);
+}
+selector {
+    font-family: Lifecraft, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo {
+    margin-top: 0.5rem;
+}
+
+.logo img {
+    display: block;
+    margin: 0 auto;
+    height: 250px;
+}
+
+.menu{
+    width: 100%;
+    background-color: rgba(0, 0, 0, var(--nav-opacity));
+    padding: 0.5rem 0;
+}
+
+.menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.menu a{
+    color: #fff;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    display: inline-block;
+    font-weight: 500; 
+    font-family: 'Lifecraft', sans-serif;
+    font-size: 1.75rem; 
+}
+
+.menu a:hover{
+    font-weight: 700;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, var(--nav-opacity));
+    padding: 0.8rem 0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer a, .footer a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover, .footer a:focus {
+    color: #fff;
+    font-weight: 700;
+}

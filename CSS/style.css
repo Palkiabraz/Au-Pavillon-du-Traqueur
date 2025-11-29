@@ -5,6 +5,10 @@
     --nav-opacity: 0.45;
 }
 
+*:focus {
+    outline: none;
+}
+
 @font-face {
     font-family: 'Lifecraft';
     src: url(../Polices/LifeCraft_Font.ttf);
@@ -15,6 +19,18 @@ selector {
 
 html, body {
     height: 100%;
+}
+
+.first-subtitle {
+    width: 50%;
+    max-width: 710px;
+    margin: 0 auto;
+}
+
+.second-subtitle {
+    width: 69%;
+    max-width: 904px;
+    margin: 0 auto;
 }
 
 body {
@@ -124,9 +140,11 @@ h1 {
     font-family: Arial;
     font-size: 1rem;
     margin-top: 0.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     padding-top: 0.25rem; 
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.25rem;
+    text-align: justify;
+    text-align: center;
 }
 
 .subtitle-bar {
@@ -139,7 +157,6 @@ h1 {
     border: 1px solid white;
 }
 
-/* conteneur des boutons côte à côte */
 .buttons-container {
     width: 100%;
     display: flex;
@@ -148,6 +165,7 @@ h1 {
     gap: 2rem;
     margin: 2rem 0;
 }
+
 .buttons-container >*{
     width:50%;
 }
@@ -161,7 +179,7 @@ h1 {
     display: flex;
     justify-content: flex-start;
 }
-/* bouton image (téléchargement) */
+
 .button-image {
     display: inline-flex;
     align-items: center;
@@ -183,7 +201,6 @@ h1 {
     height: 60px;
 }
 
-/* bouton personnalisé (image + texte) */
 .button-custom {
     display: flex;
     align-items: center;
@@ -198,16 +215,21 @@ h1 {
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
+    width: 600px ;
 }
 
 .button-custom >a {
     background-color: #34373E;
-    border: 20px solid #3F4249;
+    border: 15px solid #3F4249;
     border-radius: 16px;
 }
 
 .button-custom >a:hover {
-    background-color: #3F4249; /* couleur au survol */
+    border: 15px solid #34373E;
+}
+
+.button-custom span {
+    text-wrap: wrap;
 }
 
 .button-icon {

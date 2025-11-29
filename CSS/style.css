@@ -2,15 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --nav-opacity: 0.75;
+    --nav-opacity: 0.45;
 }
 
 @font-face {
-    font-family: Lifecraft;
+    font-family: 'Lifecraft';
     src: url(../Polices/LifeCraft_Font.ttf);
 }
 selector {
-    font-family: Lifecraft, sans-serif;
+    font-family: 'Lifecraft';
 }
 
 html, body {
@@ -20,6 +20,11 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    background-image: url('../Images/Fond.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .header {
@@ -53,7 +58,7 @@ body {
     justify-content: space-evenly;
     gap: 1.5rem;
     align-items: center;
-    width: 50%;
+    width: 80%;
 }
 
 .menu a{
@@ -62,9 +67,9 @@ body {
     padding: 0.25rem 0.5rem;
     display: inline-block;
     font-weight: 500; 
-    font-family: 'Lifecraft', sans-serif;
+    font-family: 'Lifecraft';
     font-size: 1.75rem;
-    width: 262px;
+    width: 215px;
 }
 
 .menu a:hover{
@@ -75,11 +80,11 @@ body {
     text-align: right;
 }
 
-.menu li:nth-child(2) a {
+.menu li:nth-child(2) a, .menu li:nth-child(3) a {
     text-align: center;
 }
 
-.menu li:nth-child(3) a {
+.menu li:nth-child(4) a {
   text-align: left;
 }
 
@@ -103,4 +108,109 @@ footer {
 .footer a:hover, .footer a:focus {
     color: #fff;
     font-weight: 700;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-family: Arial;
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem 0;
+}
+
+.subtitle {
+    text-align: center;
+    color: #fff;
+    font-family: Arial;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    padding-top: 0.25rem; 
+    padding-bottom: 0.5rem;
+}
+
+.subtitle-bar {
+    display: block;
+    width: 25%;
+    height: 2px;
+    background-color: #fff;
+    margin: 1rem auto;
+    padding: 0;
+    border: 1px solid white;
+}
+
+/* conteneur des boutons côte à côte */
+.buttons-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+.buttons-container >*{
+    width:50%;
+}
+
+.buttons-container >div.left{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons-container >div.right{
+    display: flex;
+    justify-content: flex-start;
+}
+/* bouton image (téléchargement) */
+.button-image {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.button-image:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.button-image img {
+    width: 60px;
+    height: 60px;
+}
+
+/* bouton personnalisé (image + texte) */
+.button-custom {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    background-color: transparent;
+    color: #fff;
+    border: 1px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.button-custom >a {
+    background-color: #34373E;
+    border: 20px solid #3F4249;
+    border-radius: 16px;
+}
+
+.button-custom >a:hover {
+    background-color: #3F4249; /* couleur au survol */
+}
+
+.button-icon {
+    width: 128px;
+    height: 96px;
 }

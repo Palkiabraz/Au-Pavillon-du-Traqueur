@@ -47,12 +47,13 @@ body {
 
 .menu ul{
     list-style: none;
-    margin: 0;
+    margin: auto;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 1.5rem;
     align-items: center;
+    width: 50%;
 }
 
 .menu a{
@@ -62,11 +63,24 @@ body {
     display: inline-block;
     font-weight: 500; 
     font-family: 'Lifecraft', sans-serif;
-    font-size: 1.75rem; 
+    font-size: 1.75rem;
+    width: 262px;
 }
 
 .menu a:hover{
     font-weight: 700;
+}
+
+.menu li:nth-child(1) a {
+    text-align: right;
+}
+
+.menu li:nth-child(2) a {
+    text-align: center;
+}
+
+.menu li:nth-child(3) a {
+  text-align: left;
 }
 
 footer {

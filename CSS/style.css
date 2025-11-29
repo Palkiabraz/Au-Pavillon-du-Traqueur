@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: Lifecraft;
-    src: url(./Police/LifeCraft_Font.ttf);
+    src: url(/Polices/LifeCraft_Font.ttf);
 }
 selector {
     font-family: Lifecraft, sans-serif;

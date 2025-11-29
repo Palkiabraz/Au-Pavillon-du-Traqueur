@@ -158,7 +158,7 @@ h1 {
 }
 
 .buttons-container {
-    width: 100%;
+    width:100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,7 +172,9 @@ h1 {
 
 .buttons-container >div.left{
     display: flex;
+    align-items: center;
     justify-content: flex-end;
+    gap: 0.5rem;
 }
 
 .buttons-container >div.right{
@@ -180,28 +182,39 @@ h1 {
     justify-content: flex-start;
 }
 
-.button-image {
+.button-printable {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
+    width: 148px;
+    height: 148px;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
     transition: background-color 0.3s;
     cursor: pointer;
+    flex: 0 0 auto;
 }
 
-.button-image:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+.button-printable:hover {
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
-.button-image img {
-    width: 60px;
-    height: 60px;
+.button-printable img {
+    width: 128px;
+    height: 128px;
 }
 
-.button-custom {
+.button-text {
+    color: #fff;
+    font-family: Arial;
+    font-size: 1rem;
+    margin: 0;
+    flex: 0 0 auto;   
+    text-align: center;
+    max-width: 320px;
+}
+
+.button-steam {
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -218,17 +231,17 @@ h1 {
     width: 600px ;
 }
 
-.button-custom >a {
+.button-steam >a {
     background-color: #34373E;
-    border: 15px solid #3F4249;
+    border: 8px solid #3F4249;
     border-radius: 16px;
 }
 
-.button-custom >a:hover {
-    border: 15px solid #34373E;
+.button-steam >a:hover {
+    border: 8px solid #34373E;
 }
 
-.button-custom span {
+.button-steam span {
     text-wrap: wrap;
 }
 

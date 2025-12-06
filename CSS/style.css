@@ -163,7 +163,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin: 2rem 0;
+    margin: 0;
 }
 
 .buttons-container >*{
@@ -212,6 +212,10 @@ h1 {
     flex: 0 0 auto;   
     text-align: center;
     max-width: 320px;
+}
+
+a:hover .button-icon {
+    transform: scale(1.30);
 }
 
 .button-steam {

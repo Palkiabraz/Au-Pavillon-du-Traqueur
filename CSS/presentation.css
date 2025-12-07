@@ -1,0 +1,46 @@
+.button-rules{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    flex: 0 0 auto;
+    padding : 1rem;
+}
+
+button.button-rules {
+    background-color: transparent;
+    border: none;
+}
+
+.button-rules a {
+    text-decoration: none;
+    padding: 0.6rem;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center; /* Centre verticalement le contenu du lien */
+}
+
+.button-rules {
+    color: #fff;
+    font-family: Arial;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0;
+}
+
+.button-rules img {
+    width: 50px; 
+    height: auto;
+}
+
+.button-rules span {
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center; 
+}

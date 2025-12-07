@@ -11,27 +11,17 @@
     text-align: center;
 }
 
-.subtitle-bar {
-    display: block;
-    width: 25%;
-    height: 2px;
-    background-color: #fff;
-    margin: 1rem auto;
-    padding: 0;
-    border: 1px solid white;
-}
-
 .buttons-container {
-    display: flex; /* Active l'alignement horizontal */
-    justify-content: center; /* Centre les boutons horizontalement */
-    align-items: center; /* Aligne les boutons verticalement */
-    gap: 2rem; /* Espacement entre les boutons */
-    margin: 2rem 0; /* Marges autour du conteneur */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 2rem; 
+    margin: 2rem 0; 
 }
 
 .buttons-container button {
     display: inline-flex;
-    flex-direction: column; /* Empile l'image et le texte */
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
     gap: 0.5rem;

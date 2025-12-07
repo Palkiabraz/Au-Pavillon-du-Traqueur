@@ -104,6 +104,16 @@ body {
   text-align: left;
 }
 
+.subtitle-bar {
+    display: block;
+    width: 25%;
+    height: 2px;
+    background-color: #fff;
+    margin: 1rem auto;
+    padding: 0;
+    border: 1px solid white;
+}
+
 footer {
     margin-top: auto;
 }

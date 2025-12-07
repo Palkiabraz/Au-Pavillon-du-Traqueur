@@ -65,7 +65,7 @@ button.button-rules {
     margin-left: 15rem;
 }
 
-.familier-image:hover {
+.button-rules img:hover, .familier-image:hover, .arme-image:hover {
     transform: scale(1.1);
     transition: transform 0.3s; 
 }
@@ -109,4 +109,31 @@ button.button-rules {
 
 .vie {
     color: #FF0000; 
+}
+
+.arme-section {
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center; 
+    gap: 0; 
+    margin: 2rem 0; 
+    padding: 1rem;
+}
+
+.arme-text {
+    max-width: 600px; 
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: right; 
+    margin-right: 2rem; 
+}
+
+.arme-image {
+    width: 300px; 
+    height: auto; 
+    margin-right: 15rem; 
+}
+
+.cout {
+    color: #FFCC00; 
 }

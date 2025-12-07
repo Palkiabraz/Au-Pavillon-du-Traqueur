@@ -1,0 +1,91 @@
+.subtitle {
+    text-align: center;
+    color: #fff;
+    font-family: Arial;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    padding-top: 0.25rem; 
+    padding-bottom: 0.25rem;
+    text-align: justify;
+    text-align: center;
+}
+
+.subtitle-bar {
+    display: block;
+    width: 25%;
+    height: 2px;
+    background-color: #fff;
+    margin: 1rem auto;
+    padding: 0;
+    border: 1px solid white;
+}
+
+.buttons-container {
+    display: flex; /* Active l'alignement horizontal */
+    justify-content: center; /* Centre les boutons horizontalement */
+    align-items: center; /* Aligne les boutons verticalement */
+    gap: 2rem; /* Espacement entre les boutons */
+    margin: 2rem 0; /* Marges autour du conteneur */
+}
+
+.buttons-container button {
+    display: inline-flex;
+    flex-direction: column; /* Empile l'image et le texte */
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.buttons-container a img {
+    width: auto;
+    height: 256px;
+    margin: 5px;
+}
+
+.buttons-container a:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.buttons-container .button-text {
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.button-printable, .button-workshop, .button-steam {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+button.button-printable, button.button-workshop, button.button-steam {
+    background-color: transparent;
+    border: none;
+}
+
+.button-printable a, .button-workshop a, .button-steam a {
+    text-decoration: none;
+    padding: 0.6rem;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.button-printable .button-text, .button-workshop .button-text, .button-steam .button-text {
+    color: #fff;
+    font-family: Arial;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0;
+}

@@ -16,3 +16,12 @@
 .catalogue-card:hover {
     transform: scale(1.1); 
 }
+
+.catalogue-sorts {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem; 
+    justify-content: center; 
+    margin: 3rem auto; 
+    max-width: 1200px; 
+}

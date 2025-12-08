@@ -51,7 +51,7 @@ button.button-rules {
     margin: 0 auto; 
 }
 
-.familier-section {
+.familier-section, .sort-section {
     display: flex;
     align-items: center; 
     gap: 2rem;
@@ -65,18 +65,18 @@ button.button-rules {
     margin-left: 15rem;
 }
 
-.button-rules img:hover, .familier-image:hover, .arme-image:hover {
+.button-rules img:hover, .familier-image:hover, .arme-image:hover, .sort-image:hover {
     transform: scale(1.1);
     transition: transform 0.3s; 
 }
 
-.familier-text {
+.familier-text, .sort-text {
     max-width: 600px; 
     font-family: Arial, sans-serif;
     color: #fff;
 }
 
-.familier-text p {
+.familier-text p, .sort-text p {
     font-size: 1.2rem;
     line-height: 1.6;
 }
@@ -136,4 +136,10 @@ button.button-rules {
 
 .cout {
     color: #FFCC00; 
+}
+
+.sort-image {
+    width: auto;
+    height: 300px;
+    margin-left: 8.3rem;
 }

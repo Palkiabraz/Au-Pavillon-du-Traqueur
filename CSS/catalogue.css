@@ -2,8 +2,8 @@
     display: grid; 
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem; 
-    justify-content: center; 
-    margin: 3rem auto; 
+    justify-content: center;
+    margin: 0 auto; 
     max-width: 1200px; 
 }
 
@@ -22,6 +22,36 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem; 
     justify-content: center; 
-    margin: 3rem auto; 
+    margin: 0 auto;
     max-width: 1200px; 
+}
+
+.search-container {
+    text-align: center;
+    margin: 1.75rem 0;
+}
+
+#search-bar {
+    width: 25%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #f9f9f9;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #f9f9f9;
+    outline: none;
+    text-align: center;
+}
+
+#search-bar::placeholder {
+    text-align: center;
+    color: #f9f9f9;
+}
+
+#search-results {
+    text-align: center;
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 0.5rem;
 }

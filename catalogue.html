@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Au Pavillon du Traqueur</title>
-    <link rel="stylesheet" href="./CSS/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Au Pavillon du Traqueur</title>
+	<link rel="stylesheet" href="./CSS/style.css">
 	<link rel="stylesheet" href="./CSS/catalogue.css">
-    <link rel="icon" href="./Images/Icone.png" />
+	<link rel="icon" href="./Images/Icone.png" />
 </head>
+
 <body>
-    <header class="header">
+	<header class="header">
 		<div class="logo">
 			<img src="./Images/Logo.PNG" alt="Logo" height="250">
 		</div>
@@ -22,18 +24,22 @@
 			</ul>
 		</nav>
 	</header>
-	<h1>Familiers disponibles</h1>
-    <div class="catalogue">
-    	<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Araignee.png" alt="Araignée" class="catalogue-card">
-    	<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Basilic.png" alt="Basilic" class="catalogue-card">
-    	<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Bete_de_sang.png" alt="Bête de sang" class="catalogue-card">
-    	<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Bovin.png" alt="Bovin" class="catalogue-card">
-    	<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Canard.png" alt="Canard" class="catalogue-card">
-    	<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Cerf.png" alt="Cerf" class="catalogue-card">
-    	<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Charognard.png" alt="Charognard" class="catalogue-card">
-    	<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Chauve-souris.png" alt="Chauve-souris" class="catalogue-card">
-    	<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crabe.png" alt="Crabe" class="catalogue-card">
-    	<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crin-de-plume.png" alt="Crin-de-plume" class="catalogue-card">
+	<div class="search-container">
+    	<input type="text" id="search-bar" placeholder="Rechercher une carte" onkeyup="filterCards()">
+    	<p id="search-results">cartes trouvées</p>
+	</div>
+	<h1 id="familiers-title">Familiers disponibles</h1>
+	<div class="catalogue" id="familiers-catalogue">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Araignee.png" alt="Araignée" class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Basilic.png" alt="Basilic" class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Bete_de_sang.png" alt="Bête de sang" class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Bovin.png" alt="Bovin" class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Canard.png" alt="Canard" class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Cerf.png" alt="Cerf" class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Charognard.png" alt="Charognard" class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Chauve-souris.png" alt="Chauve-souris" class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crabe.png" alt="Crabe" class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crin-de-plume.png" alt="Crin-de-plume" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crocilisque.png" alt="Crocilisque" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Faucon-dragon.png" alt="Faucon-dragon" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Felin.png" alt="Félin" class="catalogue-card">
@@ -82,9 +88,8 @@
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Ver.png" alt="Ver" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Caline.png" alt="Caline" class="catalogue-card">
 	</div>
-	<hr class="subtitle-bar">
-	<h1>Armes disponibles</h1>
-	<div class="catalogue">
+	<h1 id="armes-title">Armes disponibles</h1>
+	<div class="catalogue" id="armes-catalogue">
 		<img src="./Images/Cartes/Fondamental/Armes/Arathar.png" alt="Arathar" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Armes/Ashjre_thul.png" alt="Ashjre'thul" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Armes/Choc_des_titans.png" alt="Choc des titans" class="catalogue-card">
@@ -107,9 +112,8 @@
 		<img src="./Images/Cartes/Fondamental/Armes/Vishanka.png" alt="Vishanka" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Armes/Xu_tenash.png" alt="Xu'tenash" class="catalogue-card">
 	</div>
-	<hr class="subtitle-bar">
-	<h1>Sorts disponibles</h1>
-	<div class="catalogue-sorts">
+	<h1 id="sorts-title">Sorts disponibles</h1>
+	<div class="catalogue-sorts" id="sorts-catalogue">
 		<img src="./Images/Cartes/Fondamental/Sorts/Appeler_le_familier.png" alt="Appeler le familier" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Sorts/Apprivoiser_une_bete.png" alt="Apprivoiser une bête" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_de_la_bete.png" alt="Aspect de la bête" class="catalogue-card">
@@ -159,11 +163,62 @@
 		<img src="./Images/Cartes/Fondamental/Sorts/Trait_provocateur.png" alt="Trait provocateur" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Sorts/Visee.png" alt="Visée" class="catalogue-card">
 	</div>
-    <footer>
+	<footer>
 		<div class="footer">
-			<p><i><u>Au Pavillon du Traqueur</u> se conforme aux conditions générales d'utilisation demandées par Blizzard Entertainement tout en respectant les droits de propriété intellectuelle afférents à World of Warcraft</i></p>
-            <p><i><u>Au Pavillon du Traqueur</u> est inscrit dans l'initiative <u><a href="https://atelier197.carrd.co/" target="_blank" rel="noopener noreferrer">Atelier 197<a></i></u></p>
+			<p><i><u>Au Pavillon du Traqueur</u> se conforme aux conditions générales d'utilisation demandées par
+					Blizzard Entertainement tout en respectant les droits de propriété intellectuelle afférents à World
+					of Warcraft</i></p>
+			<p><i><u>Au Pavillon du Traqueur</u> est inscrit dans l'initiative <u><a href="https://atelier197.carrd.co/"
+							target="_blank" rel="noopener noreferrer">Atelier 197<a></i></u></p>
 		</div>
 	</footer>
+	<script>
+		function filterCards() {
+    		const searchValue = document.getElementById("search-bar").value.toLowerCase();
+   			let totalVisibleCards = 0;
+
+    		const familiersCatalogue = document.getElementById("familiers-catalogue");
+    		const familiersTitle = document.getElementById("familiers-title");
+    		const familiersCards = familiersCatalogue.querySelectorAll(".catalogue-card");
+    		totalVisibleCards += filterSection(familiersCards, familiersTitle, searchValue);
+
+    		const armesCatalogue = document.getElementById("armes-catalogue");
+    		const armesTitle = document.getElementById("armes-title");
+    		const armesCards = armesCatalogue.querySelectorAll(".catalogue-card");
+    		totalVisibleCards += filterSection(armesCards, armesTitle, searchValue);
+
+    		const sortsCatalogue = document.getElementById("sorts-catalogue");
+    		const sortsTitle = document.getElementById("sorts-title");
+    		const sortsCards = sortsCatalogue.querySelectorAll(".catalogue-card");
+    		totalVisibleCards += filterSection(sortsCards, sortsTitle, searchValue);
+
+    		const searchResults = document.getElementById("search-results");
+    		if (totalVisibleCards === 1) {
+        		searchResults.textContent = "1 carte trouvée";
+    		} else {
+        		searchResults.textContent = `${totalVisibleCards} cartes trouvées`;
+    		}
+		}
+
+		function filterSection(cards, title, searchValue) {
+    		let hasVisibleCard = false;
+    		let visibleCardCount = 0;
+
+    		cards.forEach(card => {
+        		const cardName = card.alt.toLowerCase();
+        		if (cardName.includes(searchValue)) {
+            		card.style.display = "block";
+            		hasVisibleCard = true;
+            		visibleCardCount++;
+        		} else {
+            		card.style.display = "none";
+        		}
+    		});
+
+    		title.style.display = hasVisibleCard ? "block" : "none";
+
+    		return visibleCardCount;
+		}
+	</script>
 </body>
 </html>

@@ -3,7 +3,7 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem; 
     justify-content: center;
-    margin: 0 auto; 
+    margin: 0rem auto; 
     max-width: 1200px; 
 }
 
@@ -21,9 +21,13 @@
     display: grid; 
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem; 
-    justify-content: center; 
-    margin: 0 auto;
+    justify-content: center;
+    margin: 0rem auto;
     max-width: 1200px; 
+}
+
+.catalogue-h1 {
+    margin-bottom: 2rem;
 }
 
 .search-container {
@@ -46,7 +50,7 @@
 
 #search-bar::placeholder {
     text-align: center;
-    color: #f9f9f9;
+    color: #acacac;
 }
 
 #search-results {

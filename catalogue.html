@@ -25,10 +25,10 @@
 		</nav>
 	</header>
 	<div class="search-container">
-    	<input type="text" id="search-bar" placeholder="Rechercher une carte" onkeyup="filterCards()">
+    	<input type="text" id="search-bar" placeholder="Rechercher" onkeyup="filterCards(this.value.toLowerCase())">
     	<p id="search-results">cartes trouvées</p>
 	</div>
-	<h1 id="familiers-title">Familiers disponibles</h1>
+	<h1 id="familiers-title" class="catalogue-h1">Familiers disponibles</h1>
 	<div class="catalogue" id="familiers-catalogue">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Araignee.png" alt="Araignée" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Basilic.png" alt="Basilic" class="catalogue-card">
@@ -88,7 +88,7 @@
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Ver.png" alt="Ver" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Caline.png" alt="Caline" class="catalogue-card">
 	</div>
-	<h1 id="armes-title">Armes disponibles</h1>
+	<h1 id="armes-title" class="catalogue-h1">Armes disponibles</h1>
 	<div class="catalogue" id="armes-catalogue">
 		<img src="./Images/Cartes/Fondamental/Armes/Arathar.png" alt="Arathar" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Armes/Ashjre_thul.png" alt="Ashjre'thul" class="catalogue-card">
@@ -112,7 +112,7 @@
 		<img src="./Images/Cartes/Fondamental/Armes/Vishanka.png" alt="Vishanka" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Armes/Xu_tenash.png" alt="Xu'tenash" class="catalogue-card">
 	</div>
-	<h1 id="sorts-title">Sorts disponibles</h1>
+	<h1 id="sorts-title" class="catalogue-h1">Sorts disponibles</h1>
 	<div class="catalogue-sorts" id="sorts-catalogue">
 		<img src="./Images/Cartes/Fondamental/Sorts/Appeler_le_familier.png" alt="Appeler le familier" class="catalogue-card">
 		<img src="./Images/Cartes/Fondamental/Sorts/Apprivoiser_une_bete.png" alt="Apprivoiser une bête" class="catalogue-card">
@@ -173,8 +173,7 @@
 		</div>
 	</footer>
 	<script>
-		function filterCards() {
-    		const searchValue = document.getElementById("search-bar").value.toLowerCase();
+		function filterCards(searchValue) {
    			let totalVisibleCards = 0;
 
     		const familiersCatalogue = document.getElementById("familiers-catalogue");
@@ -219,6 +218,8 @@
 
     		return visibleCardCount;
 		}
+
+		filterCards("");
 	</script>
 </body>
 </html>

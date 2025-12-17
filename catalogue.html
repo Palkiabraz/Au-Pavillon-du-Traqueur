@@ -25,68 +25,146 @@
 		</nav>
 	</header>
 	<div class="search-container">
-    	<input type="text" id="search-bar" placeholder="Rechercher" onkeyup="filterCards(this.value.toLowerCase())">
-    	<p id="search-results">cartes trouvées</p>
+		<input type="text" id="search-bar" placeholder="Rechercher" onkeyup="filterCards(this.value.toLowerCase())">
+		<div class="filter-container">
+			<div class="dropdown" id="category-dropdown-wrap">
+				<button class="dropdown-btn" id="category-btn">Catégorie de cartes</button>
+				<div class="dropdown-content" id="category-dropdown">
+					<a href="#" data-category="tous">Toutes les cartes</a>
+					<a href="#" data-category="familiers">Familiers</a>
+					<a href="#" data-category="armes">Armes</a>
+					<a href="#" data-category="sorts">Sorts</a>
+				</div>
+			</div>
+			<div class="dropdown" id="type-dropdown-wrap">
+				<button class="dropdown-btn" id="type-btn">Type de familiers</button>
+				<div class="dropdown-content" id="type-dropdown">
+					<a href="#" data-type="tous">Tous les types</a>
+					<a href="#" data-type="feroce">Féroce</a>
+					<a href="#" data-type="ruse">Rusé</a>
+					<a href="#" data-type="tenace">Tenace</a>
+					<a href="#" data-type="aucun">Aucun type</a>
+				</div>
+			</div>
+		</div>
+		<p id="search-results">cartes trouvées</p>
 	</div>
 	<h1 id="familiers-title" class="catalogue-h1">Familiers disponibles</h1>
 	<div class="catalogue" id="familiers-catalogue">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Araignee.png" alt="Araignée" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Basilic.png" alt="Basilic" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Bete_de_sang.png" alt="Bête de sang" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Bovin.png" alt="Bovin" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Canard.png" alt="Canard" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Cerf.png" alt="Cerf" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Charognard.png" alt="Charognard" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Chauve-souris.png" alt="Chauve-souris" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crabe.png" alt="Crabe" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crin-de-plume.png" alt="Crin-de-plume" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crocilisque.png" alt="Crocilisque" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Faucon-dragon.png" alt="Faucon-dragon" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Felin.png" alt="Félin" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Gorille.png" alt="Gorille" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Guepe.png" alt="Guêpe" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Hanneton.png" alt="Hanneton" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Haut-trotteur.png" alt="Haut-trotteur" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Hydre.png" alt="Hydre" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Hyene.png" alt="Hyène" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Lezard.png" alt="Lézard" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Loup.png" alt="Loup" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Mecanique.png" alt="Mécanique" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Molosse.png" alt="Molosse" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Navrecorne.png" alt="Navrecorne" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Oiseau_de_proie.png" alt="Oiseau de proie" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Ours.png" alt="Ours" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Peau_ecailleuse.png" alt="Peau écailleuse" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Phalene.png" alt="Phalène" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Potamodonte.png" alt="Potamodonte" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Raie.png" alt="Raie" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Raptor.png" alt="Raptor" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Raucorne.png" alt="Raucorne" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Ravageur.png" alt="Ravageur" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Renard.png" alt="Renard" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Rongeur.png" alt="Rongeur" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sabot-fourchu.png" alt="Sabot-fourchu" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sanglier.png" alt="Sanglier" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sautilleur.png" alt="Sautilleur" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Scorpide.png" alt="Scorpide" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Serpent.png" alt="Serpent" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Serpent_des_vents.png" alt="Serpent des vents" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Singe.png" alt="Singe" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sporoptere.png" alt="Sporoptère" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Tortue.png" alt="Tortue" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Traqueur_dimensionnel.png" alt="Traqueur dimensionnel" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Aqir.png" alt="Aqir" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Bete_de_schiste.png" alt="Bête de schiste" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Carapide.png" alt="Carapide" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Chien_du_magma.png" alt="Chien du magma" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Chimere.png" alt="Chimère" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Diablosaure.png" alt="Diablosaure" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Esprit_de_bete.png" alt="Esprit de bête" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Molosse_de_pierre.png" alt="Molosse de pierre" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Pterreurdactyle.png" alt="Pterreurdactyle" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Trotteur_aquatique.png" alt="Trotteur aquatique" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Ver.png" alt="Ver" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Caline.png" alt="Caline" class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Araignee.png" alt="Araignée"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Basilic.png" alt="Basilic"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Bete_de_sang.png" alt="Bête de sang"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Bovin.png" alt="Bovin"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Canard.png" alt="Canard"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Cerf.png" alt="Cerf"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Charognard.png" alt="Charognard"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Chauve-souris.png" alt="Chauve-souris"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crabe.png" alt="Crabe"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crin-de-plume.png" alt="Crin-de-plume"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crocilisque.png" alt="Crocilisque"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Faucon-dragon.png" alt="Faucon-dragon"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Felin.png" alt="Félin"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Gorille.png" alt="Gorille"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Guepe.png" alt="Guêpe"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Hanneton.png" alt="Hanneton"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Haut-trotteur.png" alt="Haut-trotteur"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Hydre.png" alt="Hydre"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Hyene.png" alt="Hyène"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Lezard.png" alt="Lézard"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Loup.png" alt="Loup"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Mecanique.png" alt="Mécanique"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Molosse.png" alt="Molosse"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Navrecorne.png" alt="Navrecorne"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Oiseau_de_proie.png" alt="Oiseau de proie"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Ours.png" alt="Ours"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Peau_ecailleuse.png" alt="Peau écailleuse"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Phalene.png" alt="Phalène"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Potamodonte.png" alt="Potamodonte"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Raie.png" alt="Raie"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Raptor.png" alt="Raptor"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Raucorne.png" alt="Raucorne"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Ravageur.png" alt="Ravageur"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Renard.png" alt="Renard"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Rongeur.png" alt="Rongeur"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sabot-fourchu.png" alt="Sabot-fourchu"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sanglier.png" alt="Sanglier"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sautilleur.png" alt="Sautilleur"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Scorpide.png" alt="Scorpide"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Serpent.png" alt="Serpent"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Serpent_des_vents.png" alt="Serpent des vents"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Singe.png" alt="Singe"
+			class="catalogue-card" data-type="ruse">	
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sporoptere.png" alt="Sporoptère"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Tortue.png" alt="Tortue"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Traqueur_dimensionnel.png"
+			alt="Traqueur dimensionnel" class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Aqir.png" alt="Aqir"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Bete_de_schiste.png" alt="Bête de schiste"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Carapide.png" alt="Carapide"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Chien_du_magma.png" alt="Chien du magma"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Chimere.png" alt="Chimère"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Diablosaure.png" alt="Diablosaure"
+			class="catalogue-card" data-type="feroce">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Esprit_de_bete.png" alt="Esprit de bête"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Molosse_de_pierre.png" alt="Molosse de pierre"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Pterreurdactyle.png" alt="Pterreurdactyle"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Trotteur_aquatique.png" alt="Trotteur aquatique"
+			class="catalogue-card" data-type="ruse">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Ver.png" alt="Ver"
+			class="catalogue-card" data-type="tenace">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Caline.png" alt="Caline"
+			class="catalogue-card" data-type="aucun">
 	</div>
 	<h1 id="armes-title" class="catalogue-h1">Armes disponibles</h1>
 	<div class="catalogue" id="armes-catalogue">
@@ -114,54 +192,102 @@
 	</div>
 	<h1 id="sorts-title" class="catalogue-h1">Sorts disponibles</h1>
 	<div class="catalogue-sorts" id="sorts-catalogue">
-		<img src="./Images/Cartes/Fondamental/Sorts/Appeler_le_familier.png" alt="Appeler le familier" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Apprivoiser_une_bete.png" alt="Apprivoiser une bête" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_de_la_bete.png" alt="Aspect de la bête" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_de_la_meute.png" alt="Aspect de la meute" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_de_la_nature.png" alt="Aspect de la nature" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_du_faucon.png" alt="Aspect du faucon" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_du_guepard.png" alt="Aspect du guépard" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_du_singe.png" alt="Aspect du singe" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Attaque_du_raptor.png" alt="Attaque du raptor" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Aura_de_precision.png" alt="Aura de précision" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Connaissance_des_betes.png" alt="Connaissance des bêtes" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Contre-attaque.png" alt="Contre-attaque" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Coupure_ d_ailes.png" alt="Coupure d'ailes" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Courroux_bestial.png" alt="Courroux bestial" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Desengagement.png" alt="Désengagement" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Dissuasion.png" alt="Dissuasion" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Effrayer_une_bete.png" alt="Effrayer une bête" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Feindre_la_mort.png" alt="Feindre la mort" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Fleche_de_dispersion.png" alt="Flèche de dispersion" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Fleche_multiple.png" alt="Flèche multiple" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Fusee_eclairante.png" alt="Fusée éclairante" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Grondement.png" alt="Grondement" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Guerir_le_familier.png" alt="Guérir le familier" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Intimidation.png" alt="Intimidation" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Marque_du_chasseur.png" alt="Marque du chasseur" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Morsure_de_mangouste.png" alt="Morsure de mangouste" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Morsure_de_serpent.png" alt="Morsure de serpent" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Morsure_de_vipere.png" alt="Morsure de vipère" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Nourrir_le_familier.png" alt="Nourrir le familier" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Oeil_d'aigle.png" alt="Oeil d'aigle" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Oeil_de_la_bete.png" alt="Oeil de la bête" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Piege_d_immolation.png" alt="Piège d'immolation" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Piege_de_glace.png" alt="Piège de glace" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Piege_explosif.png" alt="Piège explosif" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Piege_givrant.png" alt="Piège givrant" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Piqure_de_scorpide.png" alt="Piqûre de scorpide" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Piqure_de_wyverne.png" alt="Piqûre de wyverne" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Pistage.png" alt="Pistage" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Promptitude.png" alt="Promptitude" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Renvoyer_le_familier.png" alt="Renvoyer le familier" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Ressusciter_le_familier.png" alt="Ressusciter le familier" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Salve.png" alt="Salve" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Tir_des_arcanes.png" alt="Tir des arcanes" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Tir_rapide.png" alt="Tir rapide" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Tir_tranquilisant.png" alt="Tir tranquilisant" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Trait_de_choc.png" alt="Trait de choc" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Trait_provocateur.png" alt="Trait provocateur" class="catalogue-card">
-		<img src="./Images/Cartes/Fondamental/Sorts/Visee.png" alt="Visée" class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Appeler_le_familier.png" alt="Appeler le familier"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Apprivoiser_une_bete.png" alt="Apprivoiser une bête"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_de_la_bete.png" alt="Aspect de la bête"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_de_la_meute.png" alt="Aspect de la meute"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_de_la_nature.png" alt="Aspect de la nature"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_du_faucon.png" alt="Aspect du faucon"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_du_guepard.png" alt="Aspect du guépard"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Aspect_du_singe.png" alt="Aspect du singe"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Attaque_du_raptor.png" alt="Attaque du raptor"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Aura_de_precision.png" alt="Aura de précision"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Connaissance_des_betes.png" alt="Connaissance des bêtes"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Contre-attaque.png" alt="Contre-attaque"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Coupure_ d_ailes.png" alt="Coupure d'ailes"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Courroux_bestial.png" alt="Courroux bestial"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Desengagement.png" alt="Désengagement"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Dissuasion.png" alt="Dissuasion"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Effrayer_une_bete.png" alt="Effrayer une bête"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Feindre_la_mort.png" alt="Feindre la mort"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Fleche_de_dispersion.png" alt="Flèche de dispersion"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Fleche_multiple.png" alt="Flèche multiple"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Fusee_eclairante.png" alt="Fusée éclairante"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Grondement.png" alt="Grondement"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Guerir_le_familier.png" alt="Guérir le familier"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Intimidation.png" alt="Intimidation"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Marque_du_chasseur.png" alt="Marque du chasseur"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Morsure_de_mangouste.png" alt="Morsure de mangouste"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Morsure_de_serpent.png" alt="Morsure de serpent"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Morsure_de_vipere.png" alt="Morsure de vipère"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Nourrir_le_familier.png" alt="Nourrir le familier"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Oeil_d'aigle.png" alt="Oeil d'aigle"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Oeil_de_la_bete.png" alt="Oeil de la bête"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Piege_d_immolation.png" alt="Piège d'immolation"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Piege_de_glace.png" alt="Piège de glace"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Piege_explosif.png" alt="Piège explosif"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Piege_givrant.png" alt="Piège givrant"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Piqure_de_scorpide.png" alt="Piqûre de scorpide"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Piqure_de_wyverne.png" alt="Piqûre de wyverne"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Pistage.png" alt="Pistage"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Promptitude.png" alt="Promptitude"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Renvoyer_le_familier.png" alt="Renvoyer le familier"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Ressusciter_le_familier.png" alt="Ressusciter le familier"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Salve.png" alt="Salve"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Tir_des_arcanes.png" alt="Tir des arcanes"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Tir_rapide.png" alt="Tir rapide"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Tir_tranquilisant.png" alt="Tir tranquilisant"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Trait_de_choc.png" alt="Trait de choc"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Trait_provocateur.png" alt="Trait provocateur"
+			class="catalogue-card">
+		<img src="./Images/Cartes/Fondamental/Sorts/Visee.png" alt="Visée"
+			class="catalogue-card">
 	</div>
 	<footer>
 		<div class="footer">
@@ -173,53 +299,153 @@
 		</div>
 	</footer>
 	<script>
-		function filterCards(searchValue) {
-   			let totalVisibleCards = 0;
+		let selectedCategory = 'tous';
+		let selectedType = 'tous';
+		let searchValue = '';
 
+		const categoryWrap = document.getElementById('category-dropdown-wrap');
+		const categoryBtn = document.getElementById('category-btn');
+		const categoryMenu = document.getElementById('category-dropdown');
+
+		const typeWrap = document.getElementById('type-dropdown-wrap');
+		const typeBtn = document.getElementById('type-btn');
+		const typeMenu = document.getElementById('type-dropdown');
+
+		categoryBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			categoryMenu.classList.toggle('active');
+			typeMenu.classList.remove('active');
+		});
+
+		typeBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			typeMenu.classList.toggle('active');
+			categoryMenu.classList.remove('active');
+		});
+
+		document.querySelectorAll('#category-dropdown a').forEach(a => {
+			a.addEventListener('click', (e) => {
+				e.preventDefault();
+				selectedCategory = a.dataset.category;
+				const label = a.textContent;
+				categoryBtn.textContent = selectedCategory === 'tous' ? 'Catégorie de cartes' : `${label}`;
+				categoryMenu.classList.remove('active');
+				applyFilters();
+			});
+		});
+
+		document.querySelectorAll('#type-dropdown a').forEach(a => {
+			a.addEventListener('click', (e) => {
+				e.preventDefault();
+				selectedType = a.dataset.type;
+				const label = a.textContent;
+				typeBtn.textContent = selectedType === 'tous' ? 'Type de familiers' : `${label}`;
+				typeMenu.classList.remove('active');
+				applyFilters();
+			});
+		});
+
+		document.addEventListener('click', (e) => {
+			if (!categoryWrap.contains(e.target)) categoryMenu.classList.remove('active');
+			if (!typeWrap.contains(e.target)) typeMenu.classList.remove('active');
+		});
+
+		function filterCards(value) {
+			searchValue = value || '';
+			applyFilters();
+		}
+
+		function applyFilters() {
     		const familiersCatalogue = document.getElementById("familiers-catalogue");
-    		const familiersTitle = document.getElementById("familiers-title");
-    		const familiersCards = familiersCatalogue.querySelectorAll(".catalogue-card");
-    		totalVisibleCards += filterSection(familiersCards, familiersTitle, searchValue);
-
-    		const armesCatalogue = document.getElementById("armes-catalogue");
-    		const armesTitle = document.getElementById("armes-title");
-    		const armesCards = armesCatalogue.querySelectorAll(".catalogue-card");
-    		totalVisibleCards += filterSection(armesCards, armesTitle, searchValue);
-
+   			const armesCatalogue = document.getElementById("armes-catalogue");
     		const sortsCatalogue = document.getElementById("sorts-catalogue");
+    		const familiersTitle = document.getElementById("familiers-title");
+    		const armesTitle = document.getElementById("armes-title");
     		const sortsTitle = document.getElementById("sorts-title");
-    		const sortsCards = sortsCatalogue.querySelectorAll(".catalogue-card");
-    		totalVisibleCards += filterSection(sortsCards, sortsTitle, searchValue);
 
-    		const searchResults = document.getElementById("search-results");
-    		if (totalVisibleCards === 1) {
-        		searchResults.textContent = "1 carte trouvée";
-    		} else {
-        		searchResults.textContent = `${totalVisibleCards} cartes trouvées`;
-    		}
-		}
+    		const effectiveCategory = (selectedType !== 'tous') ? 'familiers' : selectedCategory;
 
-		function filterSection(cards, title, searchValue) {
-    		let hasVisibleCard = false;
-    		let visibleCardCount = 0;
+    	if (effectiveCategory === 'tous') {
+        	familiersCatalogue.style.display = "grid";
+        	armesCatalogue.style.display = "grid";
+        	sortsCatalogue.style.display = "grid";
+       		familiersTitle.style.display = "block";
+        	armesTitle.style.display = "block";
+        	sortsTitle.style.display = "block";
+    	} else if (effectiveCategory === 'familiers') {
+        	familiersCatalogue.style.display = "grid";
+        	armesCatalogue.style.display = "none";
+        	sortsCatalogue.style.display = "none";
+        	familiersTitle.style.display = "block";
+        	armesTitle.style.display = "none";
+        	sortsTitle.style.display = "none";
+    	} else if (effectiveCategory === 'armes') {
+        	familiersCatalogue.style.display = "none";
+        	armesCatalogue.style.display = "grid";
+        	sortsCatalogue.style.display = "none";
+        	familiersTitle.style.display = "none";
+        	armesTitle.style.display = "block";
+        	sortsTitle.style.display = "none";
+    	} else if (effectiveCategory === 'sorts') {
+        	familiersCatalogue.style.display = "none";
+        	armesCatalogue.style.display = "none";
+        	sortsCatalogue.style.display = "grid";
+        	familiersTitle.style.display = "none";
+        	armesTitle.style.display = "none";
+        	sortsTitle.style.display = "block";
+    	}
 
-    		cards.forEach(card => {
-        		const cardName = card.alt.toLowerCase();
-        		if (cardName.includes(searchValue)) {
-            		card.style.display = "block";
-            		hasVisibleCard = true;
-            		visibleCardCount++;
-        		} else {
-            		card.style.display = "none";
-        		}
-    		});
+    	let totalVisible = 0;
 
-    		title.style.display = hasVisibleCard ? "block" : "none";
+    	if (familiersCatalogue.style.display !== "none") {
+        	const cards = familiersCatalogue.querySelectorAll(".catalogue-card");
+        	let visible = 0;
+        	cards.forEach(img => {
+            	const nameMatch = img.alt.toLowerCase().includes(searchValue.toLowerCase());
+            	let typeMatch = true;
+            	if (selectedType !== 'tous') {
+                	const t = (img.dataset.type || '').toLowerCase();
+                	typeMatch = (selectedType === 'aucun')
+                    	? (t === '' || t === 'aucun')
+                    	: (t === selectedType);
+            	}
+            	const show = nameMatch && typeMatch;
+            	img.style.display = show ? "block" : "none";
+            	if (show) visible++;
+        	});
+        	familiersTitle.style.display = visible > 0 ? "block" : "none";
+        	totalVisible += visible;
+    	}
 
-    		return visibleCardCount;
-		}
+    	if (armesCatalogue.style.display !== "none") {
+        	const cards = armesCatalogue.querySelectorAll(".catalogue-card");
+        	let visible = 0;
+        	cards.forEach(img => {
+            	const show = img.alt.toLowerCase().includes(searchValue.toLowerCase());
+            	img.style.display = show ? "block" : "none";
+            	if (show) visible++;
+        	});
+        	armesTitle.style.display = visible > 0 ? "block" : "none";
+        	totalVisible += visible;
+    	}
 
-		filterCards("");
+    	if (sortsCatalogue.style.display !== "none") {
+        	const cards = sortsCatalogue.querySelectorAll(".catalogue-card");
+        	let visible = 0;
+        	cards.forEach(img => {
+        		const show = img.alt.toLowerCase().includes(searchValue.toLowerCase());
+            	img.style.display = show ? "block" : "none";
+            	if (show) visible++;
+        	});
+        	sortsTitle.style.display = visible > 0 ? "block" : "none";
+        	totalVisible += visible;
+    	}
+
+    	const searchResults = document.getElementById("search-results");
+    	searchResults.textContent = totalVisible === 1 ? "1 carte trouvée" : `${totalVisible} cartes trouvées`;
+	}
+
+		applyFilters();
 	</script>
 </body>
 </html>

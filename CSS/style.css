@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --nav-opacity: 0.45;
 }
 
 *:focus {
@@ -63,7 +62,7 @@ body {
 
 .menu{
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.55);
     padding: 0.5rem 0;
 }
 
@@ -121,7 +120,7 @@ footer {
 
 .footer {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.55);
     padding: 0.8rem 0;
     text-align: center;
     color: #fff;

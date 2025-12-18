@@ -411,7 +411,6 @@
 			if (!rarityWrap.contains(e.target)) rarityMenu.classList.remove('active');
 		});
 
-		// attack input handling
 		const attackInput = document.getElementById('attack-input');
 		let selectedLife = '';
 		const lifeInput = document.getElementById('life-input');
@@ -470,13 +469,13 @@
 			const armesTitle = document.getElementById("armes-title");
 			const sortsTitle = document.getElementById("sorts-title");
 
-			// Si un filtre de type/rareté est actif, on force familiers; si un filtre d'attaque est présent,
-			// on affiche familiers et armes et on cache les sorts.
 			let effectiveCategory = selectedCategory;
-			if (selectedType !== 'tous' || selectedRarity !== 'tous') {
-				effectiveCategory = 'familiers';
-			} else if ((selectedAttack && selectedAttack !== '') || (selectedLife && selectedLife !== '')) {
-				effectiveCategory = 'familiers-armes';
+			if (selectedCategory === 'tous') {
+				if (selectedType !== 'tous' || selectedRarity !== 'tous') {
+					effectiveCategory = 'familiers';
+				} else if ((selectedAttack && selectedAttack !== '') || (selectedLife && selectedLife !== '')) {
+					effectiveCategory = 'familiers-armes';
+				}
 			}
 
 			if (effectiveCategory === 'tous') {
@@ -538,7 +537,6 @@
 						rarityMatch = r === selectedRarity;
 					}
 					
-					// attack & life filters for familiers
 					const attackMatch = checkAttackCondition(img.dataset.attack, selectedAttack);
 					const lifeMatch = checkAttackCondition(img.dataset.life, selectedLife);
 					const show = nameMatch && typeMatch && rarityMatch && attackMatch && lifeMatch;
@@ -579,7 +577,6 @@
 			const searchResults = document.getElementById("search-results");
 			searchResults.textContent = totalVisible === 1 ? "1 carte trouvée" : `${totalVisible} cartes trouvées`;
 		}
-
 
 		applyFilters();
 	</script>

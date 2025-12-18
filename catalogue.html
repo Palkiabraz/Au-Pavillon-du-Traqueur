@@ -440,6 +440,17 @@
 			return { op: m[1] || '=', val: parseInt(m[2], 10) };
 		}
 
+		// normalize strings by removing diacritics and lowercasing
+		function normalizeStr(s) {
+			if (!s) return '';
+			try {
+				return s.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+			} catch (e) {
+				// fallback for environments where \p{Diacritic} is unsupported
+				return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+			}
+		}
+
 		function checkAttackCondition(cardAttack, conditionStr) {
 			if (!conditionStr) return true;
 			const cond = parseAttackCondition(conditionStr);
@@ -521,7 +532,8 @@
 				const cards = familiersCatalogue.querySelectorAll(".catalogue-card");
 				let visible = 0;
 				cards.forEach(img => {
-					const nameMatch = img.alt.toLowerCase().includes(searchValue.toLowerCase());
+					const normSearch = normalizeStr(searchValue);
+					const nameMatch = normalizeStr(img.alt).includes(normSearch);
 					
 					let typeMatch = true;
 					if (selectedType !== 'tous') {
@@ -551,7 +563,8 @@
 				const cards = armesCatalogue.querySelectorAll(".catalogue-card");
 				let visible = 0;
 				cards.forEach(img => {
-					const nameMatch = img.alt.toLowerCase().includes(searchValue.toLowerCase());
+					const normSearch = normalizeStr(searchValue);
+					const nameMatch = normalizeStr(img.alt).includes(normSearch);
 					const attackMatch = checkAttackCondition(img.dataset.attack, selectedAttack);
 					const lifeMatch = checkAttackCondition(img.dataset.life, selectedLife);
 					const show = nameMatch && ((selectedAttack ? attackMatch : true) && (selectedLife ? lifeMatch : true));
@@ -566,7 +579,8 @@
 				const cards = sortsCatalogue.querySelectorAll(".catalogue-card");
 				let visible = 0;
 				cards.forEach(img => {
-					const show = img.alt.toLowerCase().includes(searchValue.toLowerCase());
+					const normSearch = normalizeStr(searchValue);
+					const show = normalizeStr(img.alt).includes(normSearch);
 					img.style.display = show ? "block" : "none";
 					if (show) visible++;
 				});

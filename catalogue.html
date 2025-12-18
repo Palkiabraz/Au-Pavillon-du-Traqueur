@@ -28,7 +28,7 @@
 		<input type="text" id="search-bar" placeholder="Rechercher une carte" onkeyup="filterCards(this.value.toLowerCase())">
 		<div class="filter-container">
             <div class="dropdown" id="category-dropdown-wrap">
-                <button class="dropdown-btn" id="category-btn">Catégorie de cartes</button>
+                <button class="dropdown-btn" id="category-btn">Catégorie de carte</button>
                 <div class="dropdown-content" id="category-dropdown">
                     <a href="#" data-category="tous">Toutes les cartes</a>
                     <a href="#" data-category="familiers">Familiers</a>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="dropdown" id="type-dropdown-wrap">
-                <button class="dropdown-btn" id="type-btn">Type de familiers</button>
+                <button class="dropdown-btn" id="type-btn">Type de familier</button>
                 <div class="dropdown-content" id="type-dropdown">
                     <a href="#" data-type="tous">Tous les types</a>
                     <a href="#" data-type="feroce">Féroce</a>
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="dropdown" id="rarity-dropdown-wrap">
-            	<button class="dropdown-btn" id="rarity-btn">Rareté du familier</button>
+            	<button class="dropdown-btn" id="rarity-btn">Rareté de familier</button>
             	<div class="dropdown-content" id="rarity-dropdown">
                 	<a href="#" data-rarity="tous">Toutes les raretés</a>
                 	<a href="#" data-rarity="commune">Commune</a>
@@ -55,7 +55,10 @@
             </div>
             <div class="attack-filter">
                 <input type="text" id="attack-input" placeholder="Attaque (< ; > ; =)" aria-label="Filtrer par attaque">
-            </div>
+				</div>
+				<div class="life-filter">
+					<input type="text" id="life-input" placeholder="Vie / Coût (< ; > ; =)" aria-label="Filtrer par vie">
+				</div>
         </div>
 		<p id="search-results">cartes trouvées</p>
 	</div>
@@ -63,164 +66,164 @@
 	<h1 id="familiers-title" class="catalogue-h1">Familiers disponibles</h1>
 	<div class="catalogue" id="familiers-catalogue">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Aqir.png" alt="Aqir"
-			class="catalogue-card" data-type="ruse" data-rarity="exotique" data-attack="3">
+			class="catalogue-card" data-type="ruse" data-rarity="exotique" data-attack="3" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Araignee.png" alt="Araignée"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Basilic.png" alt="Basilic"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Bete_de_sang.png" alt="Bête de sang"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Bete_de_schiste.png" alt="Bête de schiste"
-			class="catalogue-card" data-type="ruse" data-rarity="exotique" data-attack="1">
+			class="catalogue-card" data-type="ruse" data-rarity="exotique" data-attack="1" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Bovin.png" alt="Bovin"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Caline.png" alt="Caline"
-			class="catalogue-card" data-rarity="exotique" data-attack="2">
+			class="catalogue-card" data-rarity="exotique" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Canard.png" alt="Canard"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Carapide.png" alt="Carapide"
-			class="catalogue-card" data-type="tenace" data-rarity="exotique" data-attack="3">
+			class="catalogue-card" data-type="tenace" data-rarity="exotique" data-attack="3" data-life="2">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Cerf.png" alt="Cerf"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="3">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="3" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Charognard.png" alt="Charognard"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Chauve-souris.png" alt="Chauve-souris"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Chien_du_magma.png" alt="Chien du magma"
-			class="catalogue-card" data-type="feroce" data-rarity="exotique" data-attack="1">
+			class="catalogue-card" data-type="feroce" data-rarity="exotique" data-attack="1" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Chimere.png" alt="Chimère"
-			class="catalogue-card" data-type="feroce" data-rarity="exotique" data-attack="1">
+			class="catalogue-card" data-type="feroce" data-rarity="exotique" data-attack="1" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crabe.png" alt="Crabe"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crin-de-plume.png" alt="Crin-de-plume"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Crocilisque.png" alt="Crocilisque"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Diablosaure.png" alt="Diablosaure"
-			class="catalogue-card" data-type="feroce" data-rarity="exotique" data-attack="1">
+			class="catalogue-card" data-type="feroce" data-rarity="exotique" data-attack="1" data-life="1">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Esprit_de_bete.png" alt="Esprit de bête"
-			class="catalogue-card" data-type="tenace" data-rarity="exotique" data-attack="1">
+			class="catalogue-card" data-type="tenace" data-rarity="exotique" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Faucon-dragon.png" alt="Faucon-dragon"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Felin.png" alt="Félin"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Gorille.png" alt="Gorille"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="3">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="3" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Guepe.png" alt="Guêpe"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="3">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="3" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Hanneton.png" alt="Hanneton"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Haut-trotteur.png" alt="Haut-trotteur"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2" data-life="2">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Hydre.png" alt="Hydre"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="3">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="3" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Hyene.png" alt="Hyène"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Lezard.png" alt="Lézard"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="3">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="3" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Loup.png" alt="Loup"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Mecanique.png" alt="Mécanique"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Molosse.png" alt="Molosse"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Molosse_de_pierre.png" alt="Molosse de pierre"
-			class="catalogue-card" data-type="tenace" data-rarity="exotique" data-attack="2">
+			class="catalogue-card" data-type="tenace" data-rarity="exotique" data-attack="2" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Navrecorne.png" alt="Navrecorne"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Oiseau_de_proie.png" alt="Oiseau de proie"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Ours.png" alt="Ours"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Peau_ecailleuse.png" alt="Peau écailleuse"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Phalene.png" alt="Phalène"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Potamodonte.png" alt="Potamodonte"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Pterreurdactyle.png" alt="Pterreurdactyle"
-			class="catalogue-card" data-type="ruse" data-rarity="exotique" data-attack="2">
+			class="catalogue-card" data-type="ruse" data-rarity="exotique" data-attack="2" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Raie.png" alt="Raie"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Raptor.png" alt="Raptor"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Raucorne.png" alt="Raucorne"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Ravageur.png" alt="Ravageur"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Renard.png" alt="Renard"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Rongeur.png" alt="Rongeur"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sabot-fourchu.png" alt="Sabot-fourchu"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sanglier.png" alt="Sanglier"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sautilleur.png" alt="Sautilleur"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Scorpide.png" alt="Scorpide"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Serpent.png" alt="Serpent"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="5">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="5" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Serpent_des_vents.png" alt="Serpent des vents"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2">
+			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Singe.png" alt="Singe"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2">	
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2" data-life="4">	
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sporoptere.png" alt="Sporoptère"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Tortue.png" alt="Tortue"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Traqueur_dimensionnel.png" alt="Traqueur dimensionnel"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1">
+			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Trotteur_aquatique.png" alt="Trotteur aquatique"
-			class="catalogue-card" data-type="ruse" data-rarity="exotique" data-attack="2">
+			class="catalogue-card" data-type="ruse" data-rarity="exotique" data-attack="2" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Ver.png" alt="Ver"
-			class="catalogue-card" data-type="tenace" data-rarity="exotique" data-attack="1">
+			class="catalogue-card" data-type="tenace" data-rarity="exotique" data-attack="1" data-life="5">
 	</div>
 	<h1 id="armes-title" class="catalogue-h1">Armes disponibles</h1>
 	<div class="catalogue" id="armes-catalogue">
 		<img src="./Images/Cartes/Fondamental/Armes/Arathar.png" alt="Arathar"
-			class="catalogue-card" data-attack="3">
+			class="catalogue-card" data-attack="3" data-life="3">
 		<img src="./Images/Cartes/Fondamental/Armes/Ashjre_thul.png" alt="Ashjre'thul"
-			class="catalogue-card" data-attack="3">
+			class="catalogue-card" data-attack="3" data-life="3">
 		<img src="./Images/Cartes/Fondamental/Armes/Choc_des_titans.png" alt="Choc des titans"
-			class="catalogue-card" data-attack="2">
+			class="catalogue-card" data-attack="2" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Armes/Fal_inrush.png" alt="Fal'inrush"
-			class="catalogue-card" data-attack="3">
+			class="catalogue-card" data-attack="3" data-life="2">
 		<img src="./Images/Cartes/Fondamental/Armes/Fang_Kung.png" alt="Fang Kung"
-			class="catalogue-card" data-attack="2">
+			class="catalogue-card" data-attack="2" data-life="3">
 		<img src="./Images/Cartes/Fondamental/Armes/Griffe-Serre.png" alt="Griffe-Serre"
-			class="catalogue-card" data-attack="3">
+			class="catalogue-card" data-attack="3" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Armes/Kiril.png" alt="Kiril"
-			class="catalogue-card" data-attack="2">
+			class="catalogue-card" data-attack="2" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Armes/Klatith.png" alt="Klatith"
-			class="catalogue-card" data-attack="2">
+			class="catalogue-card" data-attack="2" data-life="3">
 		<img src="./Images/Cartes/Fondamental/Armes/Lotrafen.png" alt="Lotrafen"
-			class="catalogue-card" data-attack="6">
+			class="catalogue-card" data-attack="6" data-life="2">
 		<img src="./Images/Cartes/Fondamental/Armes/Miracoran.png" alt="Miracoran"
-			class="catalogue-card" data-attack="2">
+			class="catalogue-card" data-attack="2" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Armes/Oppresseur.png" alt="Oppresseur"
-			class="catalogue-card" data-attack="2">
+			class="catalogue-card" data-attack="2" data-life="2">
 		<img src="./Images/Cartes/Fondamental/Armes/Ordalie.png" alt="Ordalie"
-			class="catalogue-card" data-attack="3">
+			class="catalogue-card" data-attack="3" data-life="3">
 		<img src="./Images/Cartes/Fondamental/Armes/Rhok_delar.png" alt="Rhok'delar"
-			class="catalogue-card" data-attack="1">
+			class="catalogue-card" data-attack="1" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Armes/Shan-Dun.png" alt="Shan-Dun"
-			class="catalogue-card" data-attack="1">
+			class="catalogue-card" data-attack="1" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Armes/Tal_rak.png" alt="Tal'rak"
-			class="catalogue-card" data-attack="3">
+			class="catalogue-card" data-attack="3" data-life="2">
 		<img src="./Images/Cartes/Fondamental/Armes/Taoren.png" alt="Taoren"
-			class="catalogue-card" data-attack="2">
+			class="catalogue-card" data-attack="2" data-life="3">
 		<img src="./Images/Cartes/Fondamental/Armes/Thas_dorah.png" alt="Thas'dorah"
-			class="catalogue-card" data-attack="3">
+			class="catalogue-card" data-attack="3" data-life="3">
 		<img src="./Images/Cartes/Fondamental/Armes/Thori_dal.png" alt="Thori'dal"
-			class="catalogue-card" data-attack="3">
+			class="catalogue-card" data-attack="3" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Armes/Tigre_hurlant.png" alt="Tigre hurlant"
-			class="catalogue-card" data-attack="4">
+			class="catalogue-card" data-attack="4" data-life="2">
 		<img src="./Images/Cartes/Fondamental/Armes/Vishanka.png" alt="Vishanka"
-			class="catalogue-card" data-attack="3">
+			class="catalogue-card" data-attack="3" data-life="3">
 		<img src="./Images/Cartes/Fondamental/Armes/Xu_tenash.png" alt="Xu'tenash"
-			class="catalogue-card" data-attack="4">
+			class="catalogue-card" data-attack="4" data-life="3">
 	</div>
 	<h1 id="sorts-title" class="catalogue-h1">Sorts disponibles</h1>
 	<div class="catalogue-sorts" id="sorts-catalogue">
@@ -410,6 +413,8 @@
 
 		// attack input handling
 		const attackInput = document.getElementById('attack-input');
+		let selectedLife = '';
+		const lifeInput = document.getElementById('life-input');
 		if (attackInput) {
 			attackInput.addEventListener('input', (e) => {
 				selectedAttack = e.target.value.trim();
@@ -417,6 +422,16 @@
 				applyFilters();
 			});
 		}
+
+		if (lifeInput) {
+			lifeInput.addEventListener('input', (e) => {
+				selectedLife = e.target.value.trim();
+				lifeInput.classList.toggle('has-value', selectedLife !== '');
+				applyFilters();
+			});
+		}
+
+        
 
 		function parseAttackCondition(condition) {
 			if (!condition) return null;
@@ -460,7 +475,7 @@
 			let effectiveCategory = selectedCategory;
 			if (selectedType !== 'tous' || selectedRarity !== 'tous') {
 				effectiveCategory = 'familiers';
-			} else if (selectedAttack && selectedAttack !== '') {
+			} else if ((selectedAttack && selectedAttack !== '') || (selectedLife && selectedLife !== '')) {
 				effectiveCategory = 'familiers-armes';
 			}
 
@@ -523,9 +538,10 @@
 						rarityMatch = r === selectedRarity;
 					}
 					
-					// attack filter for familiers
+					// attack & life filters for familiers
 					const attackMatch = checkAttackCondition(img.dataset.attack, selectedAttack);
-					const show = nameMatch && typeMatch && rarityMatch && attackMatch;
+					const lifeMatch = checkAttackCondition(img.dataset.life, selectedLife);
+					const show = nameMatch && typeMatch && rarityMatch && attackMatch && lifeMatch;
 					img.style.display = show ? "block" : "none";
 					if (show) visible++;
 				});
@@ -539,7 +555,8 @@
 				cards.forEach(img => {
 					const nameMatch = img.alt.toLowerCase().includes(searchValue.toLowerCase());
 					const attackMatch = checkAttackCondition(img.dataset.attack, selectedAttack);
-					const show = nameMatch && (selectedAttack ? attackMatch : true);
+					const lifeMatch = checkAttackCondition(img.dataset.life, selectedLife);
+					const show = nameMatch && ((selectedAttack ? attackMatch : true) && (selectedLife ? lifeMatch : true));
 					img.style.display = show ? "block" : "none";
 					if (show) visible++;
 				});
@@ -562,6 +579,7 @@
 			const searchResults = document.getElementById("search-results");
 			searchResults.textContent = totalVisible === 1 ? "1 carte trouvée" : `${totalVisible} cartes trouvées`;
 		}
+
 
 		applyFilters();
 	</script>

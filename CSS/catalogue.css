@@ -57,7 +57,8 @@
 
 #search-results {
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.35rem;
+    font-weight: bold;
     color: #fff;
     margin-top: 0.5rem;
 }
@@ -118,12 +119,12 @@
     display: block;
 }
 
-.attack-filter {
+.attack-filter, .life-filter {
     display: inline-flex;
     align-items: center;
 }
 
-#attack-input {
+#attack-input, #life-input {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border: none;
@@ -138,12 +139,12 @@
     font-weight: 400;
 }
 
-#attack-input::placeholder {
+#attack-input::placeholder, #life-input::placeholder {
     text-align: center;
     color: #fff;
     font-weight: normal;
 }
 
-#attack-input.has-value {
+#attack-input.has-value, #life-input.has-value {
     font-weight: bold;
 }

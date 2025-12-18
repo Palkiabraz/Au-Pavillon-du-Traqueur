@@ -83,7 +83,8 @@
     background-color: transparent;
     color: #fff;
     cursor: pointer;
-    min-width: 180px;
+    width: 180px;
+    box-sizing: border-box;
     text-align: center;
 }
 
@@ -115,4 +116,34 @@
 
 .dropdown-content.active {
     display: block;
+}
+
+.attack-filter {
+    display: inline-flex;
+    align-items: center;
+}
+
+#attack-input {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #fff;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+    width: 180px;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+#attack-input::placeholder {
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+}
+
+#attack-input.has-value {
+    font-weight: bold;
 }

@@ -430,8 +430,6 @@
 			});
 		}
 
-        
-
 		function parseAttackCondition(condition) {
 			if (!condition) return null;
 			const s = condition.trim();
@@ -440,16 +438,21 @@
 			return { op: m[1] || '=', val: parseInt(m[2], 10) };
 		}
 
-		// normalize strings by removing diacritics and lowercasing
 		function normalizeStr(s) {
 			if (!s) return '';
 			try {
-				return s.normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
-			} catch (e) {
-				// fallback for environments where \p{Diacritic} is unsupported
 				return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+			} catch (e) {
+				return s.replace(/[\u0300-\u036f]/g, '').toLowerCase();
 			}
 		}
+
+		const extraKeywords = {
+			'molosse': 'fleche tir',
+			'ours': 'piege',
+			'renard': 'aspect',
+			'rongeur': 'morsure piqure'
+		};
 
 		function checkAttackCondition(cardAttack, conditionStr) {
 			if (!conditionStr) return true;
@@ -533,7 +536,9 @@
 				let visible = 0;
 				cards.forEach(img => {
 					const normSearch = normalizeStr(searchValue);
-					const nameMatch = normalizeStr(img.alt).includes(normSearch);
+					const cardNameNorm = normalizeStr(img.alt);
+					const extra = extraKeywords[cardNameNorm] || img.dataset.keywords || '';
+					const nameMatch = cardNameNorm.includes(normSearch) || normalizeStr(extra).includes(normSearch);
 					
 					let typeMatch = true;
 					if (selectedType !== 'tous') {
@@ -564,7 +569,9 @@
 				let visible = 0;
 				cards.forEach(img => {
 					const normSearch = normalizeStr(searchValue);
-					const nameMatch = normalizeStr(img.alt).includes(normSearch);
+					const cardNameNorm = normalizeStr(img.alt);
+					const extra = extraKeywords[cardNameNorm] || img.dataset.keywords || '';
+					const nameMatch = cardNameNorm.includes(normSearch) || normalizeStr(extra).includes(normSearch);
 					const attackMatch = checkAttackCondition(img.dataset.attack, selectedAttack);
 					const lifeMatch = checkAttackCondition(img.dataset.life, selectedLife);
 					const show = nameMatch && ((selectedAttack ? attackMatch : true) && (selectedLife ? lifeMatch : true));
@@ -580,7 +587,9 @@
 				let visible = 0;
 				cards.forEach(img => {
 					const normSearch = normalizeStr(searchValue);
-					const show = normalizeStr(img.alt).includes(normSearch);
+					const cardNameNorm = normalizeStr(img.alt);
+					const extra = extraKeywords[cardNameNorm] || img.dataset.keywords || '';
+					const show = cardNameNorm.includes(normSearch) || normalizeStr(extra).includes(normSearch);
 					img.style.display = show ? "block" : "none";
 					if (show) visible++;
 				});

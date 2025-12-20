@@ -54,6 +54,25 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    position: relative; 
+}
+
+.header-top{
+    display:flex;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.header-controls{
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    position: absolute;
+    right: 1rem;
+    bottom: 0.5rem;
 }
 
 .logo {
@@ -64,6 +83,24 @@ body {
     display: block;
     margin: 0 auto;
     height: 250px;
+}
+
+.bg-toggle{
+    background: transparent;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+
+.bg-toggle img{
+    height: 48px;
+    display:block;
+}
+
+.bg-toggle:hover img, .bg-toggle:focus img{
+    transform: scale(1.1);
+    transition: transform 150ms ease; /* smooth scale on hover */
+    transform-origin: center center;
 }
 
 .menu{

@@ -3,20 +3,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2vh 2vw;
 }
 
 .logo-index{
-    height: 650px;
-    width: auto;
-    max-width: 90%;
-    max-height: 90vh;
+    width: clamp(200px, 100vw, 1200px);
+    height: auto;
+    display: block;
 }
 
 .logo-index:hover{
-    transform: scale(1.25);
-    transition: transform 0.3s;
+    transform: scale(1.1);
     transform-origin: center;
-    will-change: transform;
+    transition: transform 0.3s ease, width 0.2s ease;
+    will-change: transform, width;
 }
 
 .logo-index-link{
@@ -24,5 +24,6 @@
 }
 
 .logo-index.playing{
-    transform: scale(1.25);
+    transform: scale(1.1);
+    transform-origin: center;
 }

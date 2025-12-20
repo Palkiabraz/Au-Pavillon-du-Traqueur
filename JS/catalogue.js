@@ -415,7 +415,13 @@ function applyFilters() {
                 lifeMatch = (lp >= lifeMin && lp <= lifeMax);
             }
             const show = nameMatch && typeMatch && rarityMatch && attackMatch && lifeMatch;
-            img.style.display = show ? "block" : "none";
+            // if image is wrapped in .card-wrapper, hide the wrapper instead of the image
+            const wrapper = img.closest('.card-wrapper');
+            if (wrapper) {
+                wrapper.style.display = show ? 'flex' : 'none';
+            } else {
+                img.style.display = show ? 'block' : 'none';
+            }
             if (show) visible++;
         });
         familiersTitle.style.display = visible > 0 ? "block" : "none";
@@ -447,7 +453,12 @@ function applyFilters() {
                 lifeMatch = (lp >= lifeMin && lp <= lifeMax);
             }
             const show = nameMatch && attackMatch && lifeMatch;
-            img.style.display = show ? "block" : "none";
+            const wrapper = img.closest('.card-wrapper');
+            if (wrapper) {
+                wrapper.style.display = show ? 'flex' : 'none';
+            } else {
+                img.style.display = show ? 'block' : 'none';
+            }
             if (show) visible++;
         });
         armesTitle.style.display = visible > 0 ? "block" : "none";
@@ -462,7 +473,12 @@ function applyFilters() {
             const cardNameNorm = normalizeStr(img.alt);
             const extra = extraKeywords[cardNameNorm] || img.dataset.keywords || '';
             const show = cardNameNorm.includes(normSearch) || normalizeStr(extra).includes(normSearch);
-            img.style.display = show ? "block" : "none";
+            const wrapper = img.closest('.card-wrapper');
+            if (wrapper) {
+                wrapper.style.display = show ? 'flex' : 'none';
+            } else {
+                img.style.display = show ? 'block' : 'none';
+            }
             if (show) visible++;
         });
         sortsTitle.style.display = visible > 0 ? "block" : "none";
@@ -473,3 +489,115 @@ function applyFilters() {
     searchResults.textContent = totalVisible === 1 ? "1 carte trouvée avec la recherche de filtres" : `${totalVisible} cartes trouvées avec la recherche de filtres`;
 }
 applyFilters();
+
+// --- Zoom des cartes + overlay ---
+(function(){
+    let current = null;
+
+    function getBaseName(src) {
+        try {
+            const parts = src.split('/');
+            const name = parts[parts.length-1];
+            return name.split('.').slice(0, -1).join('.') || name;
+        } catch (e) { return src; }
+    }
+
+    function getExtensionForImage(img) {
+        let extension = img.dataset.extension || img.getAttribute('data-extension') || '';
+        if (extension) return extension;
+        const src = img.getAttribute('src') || img.src || '';
+        const m = src.match(/Cartes\/(?:([^\/]+))/i);
+        return (m && m[1]) ? m[1] : 'Fondamental';
+    }
+
+    function openZoom(img) {
+        if (current) return;
+        const overlay = document.createElement('div');
+        overlay.className = 'catalogue-overlay active';
+        const clone = img.cloneNode(true);
+        clone.classList.add('zoomed');
+        clone.style.maxWidth = '';
+        clone.style.maxHeight = '';
+
+        const content = document.createElement('div');
+        content.className = 'overlay-content';
+        content.appendChild(clone);
+
+        // Ajouter la légende dans l'overlay (visible seulement lors du zoom)
+        const extension = getExtensionForImage(img);
+        const cap = document.createElement('div');
+        cap.className = 'card-caption';
+        // Texte spécifique pour l'ensemble Fondamental
+        if (typeof extension === 'string' && extension.toLowerCase() === 'fondamental') {
+            cap.textContent = "Disponible depuis l'ensemble fondamental";
+        } else {
+            cap.textContent = extension;
+        }
+        content.appendChild(cap);
+
+        overlay.appendChild(content);
+        document.body.appendChild(overlay);
+
+        current = { overlay, clone };
+
+        requestAnimationFrame(()=> clone.classList.add('show'));
+
+        function resetFromClick(e){
+            e.stopPropagation();
+            resetZoom();
+        }
+
+        overlay.addEventListener('click', resetFromClick);
+        clone.addEventListener('click', resetFromClick);
+    }
+
+    function resetZoom(){
+        if (!current) return;
+        try { current.overlay.parentElement.removeChild(current.overlay); } catch(e){}
+        current = null;
+    }
+
+    // Ajoute une petite légende indiquant l'extension sous chaque carte
+    function ensureCaptions(root = document) {
+        root.querySelectorAll('.catalogue-card').forEach(img => {
+            const parent = img.parentElement;
+            if (parent && parent.classList && parent.classList.contains('card-wrapper')) return;
+
+            const wrapper = document.createElement('div');
+            wrapper.className = 'card-wrapper';
+            parent.replaceChild(wrapper, img);
+            wrapper.appendChild(img);
+
+            let extension = img.dataset.extension || img.getAttribute('data-extension') || '';
+            if (!extension) {
+                const src = img.getAttribute('src') || img.src || '';
+                const m = src.match(/Cartes\/(?:([^\/]+))/i);
+                extension = (m && m[1]) ? m[1] : 'Fondamental';
+            }
+            const cap = document.createElement('div');
+            cap.className = 'card-caption';
+            cap.textContent = extension;
+            wrapper.appendChild(cap);
+        });
+    }
+
+    // Attacher événements à toutes les cartes (y compris celles ajoutées dynamiquement)
+    function attachHandlers(root=document){
+        root.querySelectorAll('.catalogue-card').forEach(img => {
+            if (img.__zoomBound) return;
+            img.__zoomBound = true;
+            img.addEventListener('click', (e) => {
+                if (current) { resetZoom(); return; }
+                openZoom(img);
+            });
+        });
+    }
+
+    ensureCaptions(document);
+    attachHandlers(document);
+
+    const origApply = applyFilters;
+    window.applyFilters = function(){ origApply(); attachHandlers(document); };
+
+    window.resetCatalogueZoom = resetZoom;
+})();

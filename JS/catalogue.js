@@ -1,3 +1,4 @@
+// Variables de sélection globales
 let selectedCategory = 'tous';
 let selectedType = 'tous';
 let selectedRarity = 'tous';
@@ -14,6 +15,7 @@ const rarityWrap = document.getElementById('rarity-dropdown-wrap');
 const rarityBtn = document.getElementById('rarity-btn');
 const rarityMenu = document.getElementById('rarity-dropdown');
 categoryBtn.addEventListener('click', (e) => {
+    // Ouvre/ferme le menu catégorie et ferme les autres menus
     e.stopPropagation();
     categoryMenu.classList.toggle('active');
     typeMenu.classList.remove('active');
@@ -36,6 +38,7 @@ document.querySelectorAll('#category-dropdown a').forEach(a => {
         e.preventDefault();
         selectedCategory = a.dataset.category;
         const label = a.textContent;
+        // Met à jour le texte du bouton et applique les filtres
         categoryBtn.textContent = selectedCategory === 'tous' ? 'Catégorie de cartes' : `${label}`;
         categoryMenu.classList.remove('active');
         applyFilters();
@@ -62,6 +65,7 @@ document.querySelectorAll('#rarity-dropdown a').forEach(a => {
     });
 });
 document.addEventListener('click', (e) => {
+    // Ferme les menus si l'utilisateur clique en dehors
     if (!categoryWrap.contains(e.target)) categoryMenu.classList.remove('active');
     if (!typeWrap.contains(e.target)) typeMenu.classList.remove('active');
     if (!rarityWrap.contains(e.target)) rarityMenu.classList.remove('active');
@@ -83,6 +87,9 @@ function setDoubleRangeBackground(wrapper, minV, maxV, minPossible = 1, maxPossi
     wrapper.style.setProperty('--left', left + '%');
     wrapper.style.setProperty('--right', right + '%');
 }
+
+// Gestion des inputs de plage (double slider)
+// On met à jour les valeurs min/max et l'affichage (et on applique le filtre)
 
 if (attackMinInput && attackMaxInput) {
     attackMinInput.addEventListener('input', (e) => {
@@ -279,6 +286,7 @@ function parseAttackCondition(condition) {
     if (!m) return null;
     return { op: m[1] || '=', val: parseInt(m[2], 10) };
 }
+// Normalise une chaîne (suppression des accents et mise en minuscule)
 function normalizeStr(s) {
     if (!s) return '';
     try {
@@ -294,6 +302,9 @@ const extraKeywords = {
     'rongeur': 'morsure piqure'
 };
 function checkAttackCondition(cardAttack, conditionStr) {
+    // Ancienne fonction pour conditions textuelles comme ">= 3".
+    // Elle est conservée pour compatibilité mais n'est plus utilisée
+    // par les sliders numériques (attaque/ vie utilisent maintenant des plages).
     if (!conditionStr) return true;
     const cond = parseAttackCondition(conditionStr);
     if (!cond) return false;
@@ -312,6 +323,7 @@ function filterCards(value) {
     searchValue = value || '';
     applyFilters();
 }
+// Fonction principale qui applique tous les filtres et met à jour l'affichage
 function applyFilters() {
     const familiersCatalogue = document.getElementById("familiers-catalogue");
     const armesCatalogue = document.getElementById("armes-catalogue");
@@ -368,6 +380,7 @@ function applyFilters() {
         const cards = familiersCatalogue.querySelectorAll(".catalogue-card");
         let visible = 0;
         cards.forEach(img => {
+            // Pour chaque carte : vérifier correspondance recherche/ type / rareté / attaque / vie
             const normSearch = normalizeStr(searchValue);
             const cardNameNorm = normalizeStr(img.alt);
             const extra = extraKeywords[cardNameNorm] || img.dataset.keywords || '';
@@ -384,6 +397,7 @@ function applyFilters() {
                 const r = (img.dataset.rarity || '').toLowerCase();
                 rarityMatch = r === selectedRarity;
             }
+            // Utiliser getAttribute pour récupérer les attributs HTML bruts
             const atkAttr = img.getAttribute('data-attack');
             const atk = parseInt((atkAttr || '').trim(), 10);
             let attackMatch;

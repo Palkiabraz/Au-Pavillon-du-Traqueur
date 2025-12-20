@@ -168,7 +168,6 @@
     border-radius: 6px;
 }
 
-/* show horizontal-resize cursor when hovering the slider area */
 .double-range:hover {
     cursor: url("../Images/Curseurs/Pointer.png"), auto;
 }
@@ -184,7 +183,7 @@
     -webkit-appearance: none;
     appearance: none;
 }
-/* disable native pointer interaction; we handle dragging on the wrapper */
+
 .double-range input[type="range"] { pointer-events: none; }
 
 .double-range input[type="range"]::-webkit-slider-runnable-track {
@@ -205,7 +204,11 @@
     transform: translateY(-50%);
     z-index: 3;
 }
-.double-range input[type="range"]::-moz-range-track { background: transparent; height: 6px; }
+.double-range input[type="range"]::-moz-range-track {
+    background: transparent;
+    height: 6px;
+}
+
 .double-range input[type="range"]::-moz-range-thumb {
     width: 6px;
     height: 18px;
@@ -232,6 +235,5 @@
     font-size: 0.95rem;
 }
 
-/* Ensure thumbs are clickable above the container */
 .double-range input[type="range"] { z-index: 2; }
 .double-range input[type="range"].top { z-index: 4; }

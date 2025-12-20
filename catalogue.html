@@ -32,34 +32,35 @@
 		</nav>
 	</header>
 	<div class="search-container">
-		<input type="text" id="search-bar" placeholder="Rechercher une carte" onkeyup="filterCards(this.value.toLowerCase())">
+		<input type="text" id="search-bar" placeholder="Rechercher une carte"
+			onkeyup="filterCards(this.value.toLowerCase())">
 		<div class="filter-container">
-            <div class="dropdown" id="category-dropdown-wrap">
-                <button class="dropdown-btn" id="category-btn">Catégorie de carte</button>
-                <div class="dropdown-content" id="category-dropdown">
-                    <a href="#" data-category="tous">Toutes les cartes</a>
-                    <a href="#" data-category="familiers">Familiers</a>
-                    <a href="#" data-category="armes">Armes</a>
-                    <a href="#" data-category="sorts">Sorts</a>
-                </div>
-            </div>
-            <div class="dropdown" id="type-dropdown-wrap">
-                <button class="dropdown-btn" id="type-btn">Type de familier</button>
-                <div class="dropdown-content" id="type-dropdown">
-                    <a href="#" data-type="tous">Tous les types</a>
-                    <a href="#" data-type="feroce">Féroce</a>
-                    <a href="#" data-type="ruse">Rusé</a>
-                    <a href="#" data-type="tenace">Tenace</a>
-                </div>
-            </div>
-            <div class="dropdown" id="rarity-dropdown-wrap">
-            	<button class="dropdown-btn" id="rarity-btn">Rareté de familier</button>
-            	<div class="dropdown-content" id="rarity-dropdown">
-                	<a href="#" data-rarity="tous">Toutes les raretés</a>
-                	<a href="#" data-rarity="commune">Commune</a>
-                	<a href="#" data-rarity="exotique">Exotique</a>
-            	</div>
-            </div>
+			<div class="dropdown" id="category-dropdown-wrap">
+				<button class="dropdown-btn" id="category-btn">Catégorie de carte</button>
+				<div class="dropdown-content" id="category-dropdown">
+					<a href="#" data-category="tous">Toutes les cartes</a>
+					<a href="#" data-category="familiers">Familiers</a>
+					<a href="#" data-category="armes">Armes</a>
+					<a href="#" data-category="sorts">Sorts</a>
+				</div>
+			</div>
+			<div class="dropdown" id="type-dropdown-wrap">
+				<button class="dropdown-btn" id="type-btn">Type de familier</button>
+				<div class="dropdown-content" id="type-dropdown">
+					<a href="#" data-type="tous">Tous les types</a>
+					<a href="#" data-type="feroce">Féroce</a>
+					<a href="#" data-type="ruse">Rusé</a>
+					<a href="#" data-type="tenace">Tenace</a>
+				</div>
+			</div>
+			<div class="dropdown" id="rarity-dropdown-wrap">
+				<button class="dropdown-btn" id="rarity-btn">Rareté de familier</button>
+				<div class="dropdown-content" id="rarity-dropdown">
+					<a href="#" data-rarity="tous">Toutes les raretés</a>
+					<a href="#" data-rarity="commune">Commune</a>
+					<a href="#" data-rarity="exotique">Exotique</a>
+				</div>
+			</div>
 			<div class="attack-filter">
 				<label for="attack-min">Attaque</label>
 				<div class="double-range">
@@ -67,23 +68,23 @@
 					<input type="range" id="attack-max" min="1" max="6" value="6" step="1" aria-label="Attaque max">
 				</div>
 				<div class="range-values"><span id="attack-min-val">1</span> — <span id="attack-max-val">6</span></div>
+			</div>
+			<div class="life-filter">
+				<label for="life-min">Vie / Coût</label>
+				<div class="double-range">
+					<input type="range" id="life-min" min="1" max="6" value="1" step="1" aria-label="Vie min">
+					<input type="range" id="life-max" min="1" max="6" value="6" step="1" aria-label="Vie max">
 				</div>
-				<div class="life-filter">
-					<label for="life-min">Vie / Coût</label>
-					<div class="double-range">
-						<input type="range" id="life-min" min="1" max="6" value="1" step="1" aria-label="Vie min">
-						<input type="range" id="life-max" min="1" max="6" value="6" step="1" aria-label="Vie max">
-					</div>
-					<div class="range-values"><span id="life-min-val">1</span> — <span id="life-max-val">6</span></div>
-				</div>
-        </div>
+				<div class="range-values"><span id="life-min-val">1</span> — <span id="life-max-val">6</span></div>
+			</div>
+		</div>
 		<p id="search-results">cartes trouvées avec la recherche de filtres</p>
 	</div>
 	<hr class="subtitle-bar">
 	<h1 id="familiers-title" class="catalogue-h1">Familiers disponibles</h1>
 	<div class="catalogue" id="familiers-catalogue">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Aqir.png" alt="Aqir"
-			class="catalogue-card" data-type="ruse" data-rarity="exotique" data-attack="3" data-life="4">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Aqir.png" alt="Aqir" class="catalogue-card"
+			data-type="ruse" data-rarity="exotique" data-attack="3" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Araignee.png" alt="Araignée"
 			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Basilic.png" alt="Basilic"
@@ -100,8 +101,8 @@
 			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="1" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers exotiques/Carapide.png" alt="Carapide"
 			class="catalogue-card" data-type="tenace" data-rarity="exotique" data-attack="3" data-life="2">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Cerf.png" alt="Cerf"
-			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="3" data-life="6">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Cerf.png" alt="Cerf" class="catalogue-card"
+			data-type="tenace" data-rarity="commune" data-attack="3" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Charognard.png" alt="Charognard"
 			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Chauve-souris.png" alt="Chauve-souris"
@@ -122,12 +123,12 @@
 			class="catalogue-card" data-type="tenace" data-rarity="exotique" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Faucon-dragon.png" alt="Faucon-dragon"
 			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2" data-life="5">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Felin.png" alt="Félin"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2" data-life="4">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Felin.png" alt="Félin" class="catalogue-card"
+			data-type="feroce" data-rarity="commune" data-attack="2" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Gorille.png" alt="Gorille"
 			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="3" data-life="5">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Guepe.png" alt="Guêpe"
-			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="3" data-life="4">
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Guepe.png" alt="Guêpe" class="catalogue-card"
+			data-type="feroce" data-rarity="commune" data-attack="3" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Hanneton.png" alt="Hanneton"
 			class="catalogue-card" data-type="tenace" data-rarity="commune" data-attack="2" data-life="6">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Haut-trotteur.png" alt="Haut-trotteur"
@@ -184,8 +185,8 @@
 			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1" data-life="5">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Serpent_des_vents.png" alt="Serpent des vents"
 			class="catalogue-card" data-type="feroce" data-rarity="commune" data-attack="2" data-life="5">
-		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Singe.png" alt="Singe"
-			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="2" data-life="4">	
+		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Singe.png" alt="Singe" class="catalogue-card"
+			data-type="ruse" data-rarity="commune" data-attack="2" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Sporoptere.png" alt="Sporoptère"
 			class="catalogue-card" data-type="ruse" data-rarity="commune" data-attack="1" data-life="4">
 		<img src="./Images/Cartes/Fondamental/Familiers/Familiers communs/Tortue.png" alt="Tortue"
@@ -199,48 +200,48 @@
 	</div>
 	<h1 id="armes-title" class="catalogue-h1">Armes disponibles</h1>
 	<div class="catalogue" id="armes-catalogue">
-		<img src="./Images/Cartes/Fondamental/Armes/Arathar.png" alt="Arathar"
-			class="catalogue-card" data-attack="3" data-life="3">
-		<img src="./Images/Cartes/Fondamental/Armes/Ashjre_thul.png" alt="Ashjre'thul"
-			class="catalogue-card" data-attack="3" data-life="3">
-		<img src="./Images/Cartes/Fondamental/Armes/Choc_des_titans.png" alt="Choc des titans"
-			class="catalogue-card" data-attack="2" data-life="4">
-		<img src="./Images/Cartes/Fondamental/Armes/Fal_inrush.png" alt="Fal'inrush"
-			class="catalogue-card" data-attack="3" data-life="2">
-		<img src="./Images/Cartes/Fondamental/Armes/Fang_Kung.png" alt="Fang Kung"
-			class="catalogue-card" data-attack="2" data-life="3">
-		<img src="./Images/Cartes/Fondamental/Armes/Griffe-Serre.png" alt="Griffe-Serre"
-			class="catalogue-card" data-attack="3" data-life="4">
-		<img src="./Images/Cartes/Fondamental/Armes/Kiril.png" alt="Kiril"
-			class="catalogue-card" data-attack="2" data-life="4">
-		<img src="./Images/Cartes/Fondamental/Armes/Klatith.png" alt="Klatith"
-			class="catalogue-card" data-attack="2" data-life="3">
-		<img src="./Images/Cartes/Fondamental/Armes/Lotrafen.png" alt="Lotrafen"
-			class="catalogue-card" data-attack="6" data-life="2">
-		<img src="./Images/Cartes/Fondamental/Armes/Miracoran.png" alt="Miracoran"
-			class="catalogue-card" data-attack="2" data-life="4">
-		<img src="./Images/Cartes/Fondamental/Armes/Oppresseur.png" alt="Oppresseur"
-			class="catalogue-card" data-attack="2" data-life="2">
-		<img src="./Images/Cartes/Fondamental/Armes/Ordalie.png" alt="Ordalie"
-			class="catalogue-card" data-attack="3" data-life="3">
-		<img src="./Images/Cartes/Fondamental/Armes/Rhok_delar.png" alt="Rhok'delar"
-			class="catalogue-card" data-attack="1" data-life="4">
-		<img src="./Images/Cartes/Fondamental/Armes/Shan-Dun.png" alt="Shan-Dun"
-			class="catalogue-card" data-attack="1" data-life="4">
-		<img src="./Images/Cartes/Fondamental/Armes/Tal_rak.png" alt="Tal'rak"
-			class="catalogue-card" data-attack="3" data-life="2">
-		<img src="./Images/Cartes/Fondamental/Armes/Taoren.png" alt="Taoren"
-			class="catalogue-card" data-attack="2" data-life="3">
-		<img src="./Images/Cartes/Fondamental/Armes/Thas_dorah.png" alt="Thas'dorah"
-			class="catalogue-card" data-attack="3" data-life="3">
-		<img src="./Images/Cartes/Fondamental/Armes/Thori_dal.png" alt="Thori'dal"
-			class="catalogue-card" data-attack="3" data-life="4">
-		<img src="./Images/Cartes/Fondamental/Armes/Tigre_hurlant.png" alt="Tigre hurlant"
-			class="catalogue-card" data-attack="4" data-life="2">
-		<img src="./Images/Cartes/Fondamental/Armes/Vishanka.png" alt="Vishanka"
-			class="catalogue-card" data-attack="3" data-life="3">
-		<img src="./Images/Cartes/Fondamental/Armes/Xu_tenash.png" alt="Xu'tenash"
-			class="catalogue-card" data-attack="4" data-life="3">
+		<img src="./Images/Cartes/Fondamental/Armes/Arathar.png" alt="Arathar" class="catalogue-card"
+			data-attack="3" data-life="3">
+		<img src="./Images/Cartes/Fondamental/Armes/Ashjre_thul.png" alt="Ashjre'thul" class="catalogue-card"
+			data-attack="3" data-life="3">
+		<img src="./Images/Cartes/Fondamental/Armes/Choc_des_titans.png" alt="Choc des titans" class="catalogue-card"
+			data-attack="2" data-life="4">
+		<img src="./Images/Cartes/Fondamental/Armes/Fal_inrush.png" alt="Fal'inrush" class="catalogue-card"
+			data-attack="3" data-life="2">
+		<img src="./Images/Cartes/Fondamental/Armes/Fang_Kung.png" alt="Fang Kung" class="catalogue-card"
+			data-attack="2" data-life="3">
+		<img src="./Images/Cartes/Fondamental/Armes/Griffe-Serre.png" alt="Griffe-Serre" class="catalogue-card"
+			data-attack="3" data-life="4">
+		<img src="./Images/Cartes/Fondamental/Armes/Kiril.png" alt="Kiril" class="catalogue-card"
+			data-attack="2" data-life="4">
+		<img src="./Images/Cartes/Fondamental/Armes/Klatith.png" alt="Klatith" class="catalogue-card"
+			data-attack="2" data-life="3">
+		<img src="./Images/Cartes/Fondamental/Armes/Lotrafen.png" alt="Lotrafen" class="catalogue-card"
+			data-attack="6" data-life="2">
+		<img src="./Images/Cartes/Fondamental/Armes/Miracoran.png" alt="Miracoran" class="catalogue-card"
+			data-attack="2" data-life="4">
+		<img src="./Images/Cartes/Fondamental/Armes/Oppresseur.png" alt="Oppresseur" class="catalogue-card"
+			data-attack="2" data-life="2">
+		<img src="./Images/Cartes/Fondamental/Armes/Ordalie.png" alt="Ordalie" class="catalogue-card"
+			data-attack="3" data-life="3">
+		<img src="./Images/Cartes/Fondamental/Armes/Rhok_delar.png" alt="Rhok'delar" class="catalogue-card"
+			data-attack="1" data-life="4">
+		<img src="./Images/Cartes/Fondamental/Armes/Shan-Dun.png" alt="Shan-Dun" class="catalogue-card"
+			data-attack="1" data-life="4">
+		<img src="./Images/Cartes/Fondamental/Armes/Tal_rak.png" alt="Tal'rak" class="catalogue-card"
+			data-attack="3" data-life="2">
+		<img src="./Images/Cartes/Fondamental/Armes/Taoren.png" alt="Taoren" class="catalogue-card"
+			data-attack="2" data-life="3">
+		<img src="./Images/Cartes/Fondamental/Armes/Thas_dorah.png" alt="Thas'dorah" class="catalogue-card"
+			data-attack="3" data-life="3">
+		<img src="./Images/Cartes/Fondamental/Armes/Thori_dal.png" alt="Thori'dal" class="catalogue-card"
+			data-attack="3" data-life="4">
+		<img src="./Images/Cartes/Fondamental/Armes/Tigre_hurlant.png" alt="Tigre hurlant" class="catalogue-card"
+			data-attack="4" data-life="2">
+		<img src="./Images/Cartes/Fondamental/Armes/Vishanka.png" alt="Vishanka" class="catalogue-card"
+			data-attack="3" data-life="3">
+		<img src="./Images/Cartes/Fondamental/Armes/Xu_tenash.png" alt="Xu'tenash" class="catalogue-card"
+			data-attack="4" data-life="3">
 	</div>
 	<h1 id="sorts-title" class="catalogue-h1">Sorts disponibles</h1>
 	<div class="catalogue-sorts" id="sorts-catalogue">
@@ -342,7 +343,7 @@
 			class="catalogue-card">
 	</div>
 	<footer>
-	<script src="./JS/daynight.js"></script>
+		<script src="./JS/daynight.js"></script>
 		<div class="footer">
 			<p><i><u>Au Pavillon du Traqueur</u> se conforme aux conditions générales d'utilisation demandées par
 					Blizzard Entertainement tout en respectant les droits de propriété intellectuelle afférents à World
@@ -353,4 +354,5 @@
 	</footer>
 	<script src="JS/catalogue.js"></script>
 </body>
+
 </html>

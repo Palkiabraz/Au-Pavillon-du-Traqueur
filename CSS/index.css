@@ -7,7 +7,7 @@
 }
 
 .logo-index{
-    width: clamp(200px, 100vw, 1200px);
+    width: clamp(200px, 85vw, 1200px);
     height: auto;
     display: block;
 }

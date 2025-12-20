@@ -88,14 +88,14 @@ body {
     text-decoration: none;
     padding: 0.25rem 0.5rem;
     display: inline-block;
-    font-weight: 500; 
+    font-weight: normal; 
     font-family: 'Lifecraft';
     font-size: 1.75rem;
     width: 215px;
 }
 
 .menu a:hover{
-    font-weight: 700;
+    font-weight: bold;
 }
 
 .menu li:nth-child(1) a {

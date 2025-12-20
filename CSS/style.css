@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: url("/Images/Curseurs/Cursor.png"), auto;
 }
 
 *:focus {
@@ -20,6 +21,10 @@ selector {
 html, body {
     height: 100%;
     margin: 0;
+}
+
+button, button *, a, a *, input, input *, .catalogue-card, .catalogue-card * {
+    cursor: url("/Images/Curseurs/Pointer.png"), auto !important;
 }
 
 .first-subtitle {

@@ -1,8 +1,9 @@
 let selectedCategory = 'tous';
 let selectedType = 'tous';
 let selectedRarity = 'tous';
-let selectedAttack = '';
 let searchValue = '';
+let attackMin = 1, attackMax = 6;
+let lifeMin = 1, lifeMax = 6;
 const categoryWrap = document.getElementById('category-dropdown-wrap');
 const categoryBtn = document.getElementById('category-btn');
 const categoryMenu = document.getElementById('category-dropdown');
@@ -65,21 +66,210 @@ document.addEventListener('click', (e) => {
     if (!typeWrap.contains(e.target)) typeMenu.classList.remove('active');
     if (!rarityWrap.contains(e.target)) rarityMenu.classList.remove('active');
 });
-const attackInput = document.getElementById('attack-input');
-let selectedLife = '';
-const lifeInput = document.getElementById('life-input');
-if (attackInput) {
-    attackInput.addEventListener('input', (e) => {
-        selectedAttack = e.target.value.trim();
-        attackInput.classList.toggle('has-value', selectedAttack !== '');
+const attackMinInput = document.getElementById('attack-min');
+const attackMaxInput = document.getElementById('attack-max');
+const attackMinVal = document.getElementById('attack-min-val');
+const attackMaxVal = document.getElementById('attack-max-val');
+
+const lifeMinInput = document.getElementById('life-min');
+const lifeMaxInput = document.getElementById('life-max');
+const lifeMinVal = document.getElementById('life-min-val');
+const lifeMaxVal = document.getElementById('life-max-val');
+
+function setDoubleRangeBackground(wrapper, minV, maxV, minPossible = 1, maxPossible = 6) {
+    if (!wrapper) return;
+    const left = Math.round(((minV - minPossible) / (maxPossible - minPossible)) * 100);
+    const right = Math.round(((maxV - minPossible) / (maxPossible - minPossible)) * 100);
+    wrapper.style.setProperty('--left', left + '%');
+    wrapper.style.setProperty('--right', right + '%');
+}
+
+if (attackMinInput && attackMaxInput) {
+    attackMinInput.addEventListener('input', (e) => {
+        attackMin = parseInt(e.target.value, 10) || 1;
+        if (attackMin > attackMax) { attackMax = attackMin; attackMaxInput.value = attackMax; attackMaxVal.textContent = attackMax; }
+        attackMinVal.textContent = attackMin;
+        setDoubleRangeBackground(attackMinInput.parentElement, attackMin, attackMax);
+        applyFilters();
+    });
+    attackMaxInput.addEventListener('input', (e) => {
+        attackMax = parseInt(e.target.value, 10) || 6;
+        if (attackMax < attackMin) { attackMin = attackMax; attackMinInput.value = attackMin; attackMinVal.textContent = attackMin; }
+        attackMaxVal.textContent = attackMax;
+        setDoubleRangeBackground(attackMinInput.parentElement, attackMin, attackMax);
         applyFilters();
     });
 }
-if (lifeInput) {
-    lifeInput.addEventListener('input', (e) => {
-        selectedLife = e.target.value.trim();
-        lifeInput.classList.toggle('has-value', selectedLife !== '');
+
+if (lifeMinInput && lifeMaxInput) {
+    lifeMinInput.addEventListener('input', (e) => {
+        lifeMin = parseInt(e.target.value, 10) || 1;
+        if (lifeMin > lifeMax) { lifeMax = lifeMin; lifeMaxInput.value = lifeMax; lifeMaxVal.textContent = lifeMax; }
+        lifeMinVal.textContent = lifeMin;
+        setDoubleRangeBackground(lifeMinInput.parentElement, lifeMin, lifeMax);
         applyFilters();
+    });
+    lifeMaxInput.addEventListener('input', (e) => {
+        lifeMax = parseInt(e.target.value, 10) || 6;
+        if (lifeMax < lifeMin) { lifeMin = lifeMax; lifeMinInput.value = lifeMin; lifeMinVal.textContent = lifeMin; }
+        lifeMaxVal.textContent = lifeMax;
+        setDoubleRangeBackground(lifeMinInput.parentElement, lifeMin, lifeMax);
+        applyFilters();
+    });
+}
+
+if (attackMinInput && attackMaxInput) {
+    attackMinInput.classList.remove('top');
+    attackMaxInput.classList.add('top');
+    setDoubleRangeBackground(attackMinInput.parentElement, attackMin, attackMax);
+}
+if (lifeMinInput && lifeMaxInput) {
+    lifeMinInput.classList.remove('top');
+    lifeMaxInput.classList.add('top');
+    setDoubleRangeBackground(lifeMinInput.parentElement, lifeMin, lifeMax);
+}
+
+if (attackMinInput && attackMaxInput) {
+    const attackWrapper = attackMinInput.parentElement;
+    attackWrapper.addEventListener('pointerdown', (e) => {
+        const rect = attackWrapper.getBoundingClientRect();
+        const clickX = e.clientX;
+        const leftPos = rect.left + ((attackMin - 1) / (6 - 1)) * rect.width;
+        const rightPos = rect.left + ((attackMax - 1) / (6 - 1)) * rect.width;
+        const mid = (leftPos + rightPos) / 2;
+        const target = clickX < mid ? attackMinInput : attackMaxInput;
+        attackMinInput.classList.remove('top');
+        attackMaxInput.classList.remove('top');
+        target.classList.add('top');
+    }, { capture: true });
+}
+if (lifeMinInput && lifeMaxInput) {
+    const lifeWrapper = lifeMinInput.parentElement;
+    lifeWrapper.addEventListener('pointerdown', (e) => {
+        const rect = lifeWrapper.getBoundingClientRect();
+        const clickX = e.clientX;
+        const leftPos = rect.left + ((lifeMin - 1) / (6 - 1)) * rect.width;
+        const rightPos = rect.left + ((lifeMax - 1) / (6 - 1)) * rect.width;
+        const mid = (leftPos + rightPos) / 2;
+        const target = clickX < mid ? lifeMinInput : lifeMaxInput;
+        lifeMinInput.classList.remove('top');
+        lifeMaxInput.classList.remove('top');
+        target.classList.add('top');
+    }, { capture: true });
+}
+
+document.addEventListener('pointerup', () => {
+    if (attackMinInput && attackMaxInput) { attackMinInput.classList.remove('top'); attackMaxInput.classList.remove('top'); }
+    if (lifeMinInput && lifeMaxInput) { lifeMinInput.classList.remove('top'); lifeMaxInput.classList.remove('top'); }
+});
+
+let attackDragging = false;
+let attackDragTarget = null;
+if (attackMinInput && attackMaxInput) {
+    const wrapper = attackMinInput.parentElement;
+    wrapper.style.touchAction = 'none';
+    wrapper.addEventListener('pointerdown', (e) => {
+        e.preventDefault();
+        wrapper.setPointerCapture(e.pointerId);
+        const rect = wrapper.getBoundingClientRect();
+        const clickX = e.clientX;
+        const leftPos = rect.left + ((attackMin - 1) / (6 - 1)) * rect.width;
+        const rightPos = rect.left + ((attackMax - 1) / (6 - 1)) * rect.width;
+        attackDragTarget = (clickX < (leftPos + rightPos) / 2) ? 'min' : 'max';
+        attackDragging = true;
+        attackMinInput.classList.remove('top'); attackMaxInput.classList.remove('top');
+        (attackDragTarget === 'min' ? attackMinInput : attackMaxInput).classList.add('top');
+        const rel = Math.min(1, Math.max(0, (clickX - rect.left) / rect.width));
+        const val = Math.round(rel * (6 - 1) + 1);
+        if (attackDragTarget === 'min') {
+            attackMin = Math.min(val, attackMax);
+            attackMinInput.value = attackMin;
+            attackMinVal.textContent = attackMin;
+        } else {
+            attackMax = Math.max(val, attackMin);
+            attackMaxInput.value = attackMax;
+            attackMaxVal.textContent = attackMax;
+        }
+        setDoubleRangeBackground(wrapper, attackMin, attackMax);
+        applyFilters();
+    });
+    wrapper.addEventListener('pointermove', (e) => {
+        if (!attackDragging) return;
+        const rect = wrapper.getBoundingClientRect();
+        const rel = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
+        const val = Math.round(rel * (6 - 1) + 1);
+        if (attackDragTarget === 'min') {
+            attackMin = Math.min(val, attackMax);
+            attackMinInput.value = attackMin;
+            attackMinVal.textContent = attackMin;
+        } else if (attackDragTarget === 'max') {
+            attackMax = Math.max(val, attackMin);
+            attackMaxInput.value = attackMax;
+            attackMaxVal.textContent = attackMax;
+        }
+        setDoubleRangeBackground(wrapper, attackMin, attackMax);
+        applyFilters();
+    });
+    wrapper.addEventListener('pointerup', (e) => {
+        attackDragging = false;
+        attackDragTarget = null;
+        try { wrapper.releasePointerCapture(e.pointerId); } catch (err) {}
+        attackMinInput.classList.remove('top'); attackMaxInput.classList.remove('top');
+    });
+}
+
+let lifeDragging = false;
+let lifeDragTarget = null;
+if (lifeMinInput && lifeMaxInput) {
+    const wrapper = lifeMinInput.parentElement;
+    wrapper.style.touchAction = 'none';
+    wrapper.addEventListener('pointerdown', (e) => {
+        e.preventDefault();
+        wrapper.setPointerCapture(e.pointerId);
+        const rect = wrapper.getBoundingClientRect();
+        const clickX = e.clientX;
+        const leftPos = rect.left + ((lifeMin - 1) / (6 - 1)) * rect.width;
+        const rightPos = rect.left + ((lifeMax - 1) / (6 - 1)) * rect.width;
+        lifeDragTarget = (clickX < (leftPos + rightPos) / 2) ? 'min' : 'max';
+        lifeDragging = true;
+        lifeMinInput.classList.remove('top'); lifeMaxInput.classList.remove('top');
+        (lifeDragTarget === 'min' ? lifeMinInput : lifeMaxInput).classList.add('top');
+        const rel = Math.min(1, Math.max(0, (clickX - rect.left) / rect.width));
+        const val = Math.round(rel * (6 - 1) + 1);
+        if (lifeDragTarget === 'min') {
+            lifeMin = Math.min(val, lifeMax);
+            lifeMinInput.value = lifeMin;
+            lifeMinVal.textContent = lifeMin;
+        } else {
+            lifeMax = Math.max(val, lifeMin);
+            lifeMaxInput.value = lifeMax;
+            lifeMaxVal.textContent = lifeMax;
+        }
+        setDoubleRangeBackground(wrapper, lifeMin, lifeMax);
+        applyFilters();
+    });
+    wrapper.addEventListener('pointermove', (e) => {
+        if (!lifeDragging) return;
+        const rect = wrapper.getBoundingClientRect();
+        const rel = Math.min(1, Math.max(0, (e.clientX - rect.left) / rect.width));
+        const val = Math.round(rel * (6 - 1) + 1);
+        if (lifeDragTarget === 'min') {
+            lifeMin = Math.min(val, lifeMax);
+            lifeMinInput.value = lifeMin;
+            lifeMinVal.textContent = lifeMin;
+        } else if (lifeDragTarget === 'max') {
+            lifeMax = Math.max(val, lifeMin);
+            lifeMaxInput.value = lifeMax;
+            lifeMaxVal.textContent = lifeMax;
+        }
+        setDoubleRangeBackground(wrapper, lifeMin, lifeMax);
+        applyFilters();
+    });
+    wrapper.addEventListener('pointerup', (e) => {
+        lifeDragging = false;
+        lifeDragTarget = null;
+        try { wrapper.releasePointerCapture(e.pointerId); } catch (err) {}
+        lifeMinInput.classList.remove('top'); lifeMaxInput.classList.remove('top');
     });
 }
 function parseAttackCondition(condition) {
@@ -133,7 +323,7 @@ function applyFilters() {
     if (selectedCategory === 'tous') {
         if (selectedType !== 'tous' || selectedRarity !== 'tous') {
             effectiveCategory = 'familiers';
-        } else if ((selectedAttack && selectedAttack !== '') || (selectedLife && selectedLife !== '')) {
+        } else if (attackMin !== 1 || attackMax !== 6 || lifeMin !== 1 || lifeMax !== 6) {
             effectiveCategory = 'familiers-armes';
         }
     }
@@ -194,13 +384,28 @@ function applyFilters() {
                 const r = (img.dataset.rarity || '').toLowerCase();
                 rarityMatch = r === selectedRarity;
             }
-            const attackMatch = checkAttackCondition(img.dataset.attack, selectedAttack);
-            const lifeMatch = checkAttackCondition(img.dataset.life, selectedLife);
+            const atkAttr = img.getAttribute('data-attack');
+            const atk = parseInt((atkAttr || '').trim(), 10);
+            let attackMatch;
+            if (isNaN(atk)) {
+                attackMatch = (attackMin === 1 && attackMax === 6);
+            } else {
+                attackMatch = (atk >= attackMin && atk <= attackMax);
+            }
+            const lpAttr = img.getAttribute('data-life');
+            const lp = parseInt((lpAttr || '').trim(), 10);
+            let lifeMatch;
+            if (isNaN(lp)) {
+                lifeMatch = (lifeMin === 1 && lifeMax === 6);
+            } else {
+                lifeMatch = (lp >= lifeMin && lp <= lifeMax);
+            }
             const show = nameMatch && typeMatch && rarityMatch && attackMatch && lifeMatch;
             img.style.display = show ? "block" : "none";
             if (show) visible++;
         });
         familiersTitle.style.display = visible > 0 ? "block" : "none";
+        familiersCatalogue.style.display = visible > 0 ? "grid" : "none";
         totalVisible += visible;
     }
     if (armesCatalogue.style.display !== "none") {
@@ -211,13 +416,28 @@ function applyFilters() {
             const cardNameNorm = normalizeStr(img.alt);
             const extra = extraKeywords[cardNameNorm] || img.dataset.keywords || '';
             const nameMatch = cardNameNorm.includes(normSearch) || normalizeStr(extra).includes(normSearch);
-            const attackMatch = checkAttackCondition(img.dataset.attack, selectedAttack);
-            const lifeMatch = checkAttackCondition(img.dataset.life, selectedLife);
-            const show = nameMatch && ((selectedAttack ? attackMatch : true) && (selectedLife ? lifeMatch : true));
+            const atkAttr = img.getAttribute('data-attack');
+            const atk = parseInt((atkAttr || '').trim(), 10);
+            let attackMatch;
+            if (isNaN(atk)) {
+                attackMatch = (attackMin === 1 && attackMax === 6);
+            } else {
+                attackMatch = (atk >= attackMin && atk <= attackMax);
+            }
+            const lpAttr = img.getAttribute('data-life');
+            const lp = parseInt((lpAttr || '').trim(), 10);
+            let lifeMatch;
+            if (isNaN(lp)) {
+                lifeMatch = (lifeMin === 1 && lifeMax === 6);
+            } else {
+                lifeMatch = (lp >= lifeMin && lp <= lifeMax);
+            }
+            const show = nameMatch && attackMatch && lifeMatch;
             img.style.display = show ? "block" : "none";
             if (show) visible++;
         });
         armesTitle.style.display = visible > 0 ? "block" : "none";
+        armesCatalogue.style.display = visible > 0 ? "grid" : "none";
         totalVisible += visible;
     }
     if (sortsCatalogue.style.display !== "none") {
@@ -232,9 +452,10 @@ function applyFilters() {
             if (show) visible++;
         });
         sortsTitle.style.display = visible > 0 ? "block" : "none";
+        sortsCatalogue.style.display = visible > 0 ? "grid" : "none";
         totalVisible += visible;
     }
     const searchResults = document.getElementById("search-results");
-    searchResults.textContent = totalVisible === 1 ? "1 carte trouvée" : `${totalVisible} cartes trouvées`;
+    searchResults.textContent = totalVisible === 1 ? "1 carte trouvée avec la recherche de filtres" : `${totalVisible} cartes trouvées avec la recherche de filtres`;
 }
 applyFilters();

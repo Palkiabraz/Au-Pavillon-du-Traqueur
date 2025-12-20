@@ -529,7 +529,7 @@ applyFilters();
         cap.className = 'card-caption';
         // Texte spécifique pour l'ensemble Fondamental
         if (typeof extension === 'string' && extension.toLowerCase() === 'fondamental') {
-            cap.textContent = "Disponible depuis l'ensemble fondamental";
+            cap.textContent = "Disponible depuis le jeu de base";
         } else {
             cap.textContent = extension;
         }
@@ -576,7 +576,11 @@ applyFilters();
             }
             const cap = document.createElement('div');
             cap.className = 'card-caption';
-            cap.textContent = extension;
+            if (typeof extension === 'string' && extension.toLowerCase() === 'fondamental') {
+                cap.textContent = "Disponible depuis le jeu de base";
+            } else {
+                cap.textContent = extension;
+            }
             wrapper.appendChild(cap);
         });
     }

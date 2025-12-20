@@ -94,7 +94,7 @@ body {
 
 .bg-toggle img{
     height: 48px;
-    display:block;
+    display: block;
 }
 
 .bg-toggle:hover img, .bg-toggle:focus img{

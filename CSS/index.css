@@ -27,3 +27,10 @@
     transform: scale(1.1);
     transform-origin: center;
 }
+
+#bg-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+}

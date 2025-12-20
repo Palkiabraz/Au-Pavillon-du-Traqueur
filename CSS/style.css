@@ -67,9 +67,9 @@ body {
 }
 
 .header-controls{
-    display:flex;
-    align-items:center;
-    gap:0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     position: absolute;
     right: 1rem;
     bottom: 0rem;
@@ -95,12 +95,11 @@ body {
 .bg-toggle img{
     height: 48px;
     display: block;
+    transition: transform 0.3s; 
 }
 
 .bg-toggle:hover img, .bg-toggle:focus img{
     transform: scale(1.1);
-    transition: transform 0.3s; 
-    transform-origin: center center;
 }
 
 .menu{

@@ -14,21 +14,37 @@
 		else body.style.backgroundImage = "url('./Images/Fond.jpg')"; // fond par défaut
 	}
 
-	// Au chargement du DOM, récupérer le bouton, appliquer le mode stocké
-	// et installer le gestionnaire de clic pour basculer jour/nuit
-	document.addEventListener('DOMContentLoaded', function(){
-		const btn = document.getElementById('bg-toggle');
+	// Initialisation: appliquer le mode stocké et installer le gestionnaire de clic.
+	function initDayNight(){
 		const stored = localStorage.getItem(KEY) || 'default';
 		applyMode(stored);
-		if(!btn) return;
-		btn.dataset.mode = stored;
-		btn.addEventListener('click', function(){
-			// Détermine le mode courant et bascule
-			const current = btn.dataset.mode === 'day' ? 'day' : (btn.dataset.mode === 'night' ? 'night' : 'default');
+
+		// Gestionnaire robuste: délégation sur document pour capter les clics
+		document.addEventListener('click', function (e) {
+			const btn = e.target.closest && e.target.closest('#bg-toggle');
+			if (!btn) return;
+			try { btn.tabIndex = btn.tabIndex || 0; btn.style.pointerEvents = 'auto'; } catch (err) {}
+			const current = btn.dataset.mode === 'day' ? 'day' : (btn.dataset.mode === 'night' ? 'night' : stored);
 			const next = current === 'day' ? 'night' : 'day';
 			localStorage.setItem(KEY, next);
 			btn.dataset.mode = next;
 			applyMode(next);
 		});
-	});
+
+		// Support clavier (Enter / Space) pour accessibilité
+		document.addEventListener('keydown', function (e) {
+			if (e.key !== 'Enter' && e.key !== ' ') return;
+			const active = document.activeElement;
+			if (!active || active.id !== 'bg-toggle') return;
+			e.preventDefault();
+			active.click();
+		});
+	}
+
+	// Si le DOM est déjà chargé, init immédiate, sinon attendre l'événement
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initDayNight);
+	} else {
+		initDayNight();
+	}
 })();

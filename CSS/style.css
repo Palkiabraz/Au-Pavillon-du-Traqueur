@@ -99,7 +99,7 @@ body {
 
 .bg-toggle:hover img, .bg-toggle:focus img{
     transform: scale(1.1);
-    transition: transform 150ms ease; /* smooth scale on hover */
+    transition: transform 150ms;
     transform-origin: center center;
 }
 
@@ -129,22 +129,12 @@ body {
     font-family: 'Lifecraft';
     font-size: 1.75rem;
     width: 215px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .menu a:hover{
     font-weight: bold;
-}
-
-.menu li:nth-child(1) a {
-    text-align: right;
-}
-
-.menu li:nth-child(2) a, .menu li:nth-child(3) a {
-    text-align: center;
-}
-
-.menu li:nth-child(4) a {
-  text-align: left;
 }
 
 .subtitle-bar {

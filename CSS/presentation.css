@@ -143,36 +143,3 @@ button.button-rules {
     height: 300px;
     margin-left: 8.3rem;
 }
-
-@media (max-width: 600px) {
-    .familier-image {
-        margin-left: 1rem !important;
-        width: auto;
-        max-width: 90%;
-    }
-
-    .arme-image {
-        margin-right: 1rem !important;
-        width: auto;
-        max-width: 90%;
-    }
-
-    .sort-image {
-        margin-left: 0.5rem !important;
-        width: auto;
-        max-width: 90%;
-    }
-
-    .familier-section, .sort-section, .arme-section {
-        padding: 0.5rem;
-        gap: 1rem;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .arme-text, .familier-text, .sort-text {
-        margin: 0;
-        text-align: center;
-        max-width: 100%;
-    }
-}

@@ -146,19 +146,19 @@ button.button-rules {
 
 @media (max-width: 600px) {
     .familier-image {
-        margin-left: 1rem;
+        margin-left: 1rem !important;
         width: auto;
         max-width: 90%;
     }
 
     .arme-image {
-        margin-right: 1rem;
+        margin-right: 1rem !important;
         width: auto;
         max-width: 90%;
     }
 
     .sort-image {
-        margin-left: 0.5rem;
+        margin-left: 0.5rem !important;
         width: auto;
         max-width: 90%;
     }

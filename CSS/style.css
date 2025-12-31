@@ -14,22 +14,6 @@
     src: url(../Fichiers/LifeCraft_Font.ttf);
 }
 
-@media (max-width: 600px) {
-    .menu ul {
-        padding: 0 0.5rem;
-        gap: 0.5rem;
-    }
-    .menu a {
-        font-size: 1.15rem;
-        min-width: 0;
-        padding: 0.4rem 0.6rem;
-    }
-
-    .bg-toggle img {
-        height: 64px;
-    }
-}
-
 selector {
     font-family: 'Lifecraft';
 }
@@ -201,4 +185,20 @@ h1 {
 h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+    .menu ul {
+        padding: 0 0.5rem;
+        gap: 0.5rem;
+    }
+    .menu a {
+        font-size: 1.15rem;
+        min-width: 0;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .bg-toggle img {
+        height: 64px;
+    }
 }

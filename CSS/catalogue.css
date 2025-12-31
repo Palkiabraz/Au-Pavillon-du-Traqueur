@@ -1,3 +1,17 @@
+@media (max-width: 768px) {
+    .catalogue,
+    .catalogue-sorts {
+        margin: 0 1rem 1.5rem; 
+        max-width: none;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 0.75rem;
+    }
+
+    .search-container {
+        margin-left: 0;
+    }
+}
+
 .catalogue {
     display: grid; 
     grid-template-columns: repeat(5, 1fr);

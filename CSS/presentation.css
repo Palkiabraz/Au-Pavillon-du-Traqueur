@@ -11,21 +11,21 @@
         width: 100%;
         max-width: 320px;
         height: auto;
-        margin-left: 2rem;
+        margin-left: 0.5rem;
     }
  
     .arme-image {
         width: 100%;
         max-width: 320px;
         height: auto;
-        margin-right: 2rem;
+        margin-right: 0.5rem;
     }
 
     .sort-image {
         width: 100%;
         max-width: 320px;
         height: auto;
-        margin-left: 1.1rem;
+        margin-left: 0.3rem;
     }
 
     .familier-text, .sort-text, .arme-text {

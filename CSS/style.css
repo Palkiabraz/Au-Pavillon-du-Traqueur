@@ -24,6 +24,10 @@
         min-width: 0;
         padding: 0.4rem 0.6rem;
     }
+
+    .bg-toggle img {
+        height: 64px;
+    }
 }
 
 selector {

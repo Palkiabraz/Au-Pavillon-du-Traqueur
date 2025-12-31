@@ -7,11 +7,25 @@
         align-items: center;
     }
 
-    .familier-image, .arme-image, .sort-image {
+    .familier-image {
         width: 100%;
         max-width: 320px;
         height: auto;
-        margin: 0 auto;
+        margin-left: 2rem;
+    }
+ 
+    .arme-image {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        margin-right: 2rem;
+    }
+
+    .sort-image {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        margin-left: 1.1rem;
     }
 
     .familier-text, .sort-text, .arme-text {

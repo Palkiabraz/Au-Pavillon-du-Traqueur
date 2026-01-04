@@ -35,47 +35,51 @@
 		<input type="text" id="search-bar" placeholder="Rechercher"
 			onkeyup="filterCards(this.value.toLowerCase())">
 		<div class="filter-container">
-			<div class="dropdown" id="category-dropdown-wrap">
-				<button class="dropdown-btn" id="category-btn">Catégorie de carte</button>
-				<div class="dropdown-content" id="category-dropdown">
-					<a href="#" data-category="tous">Toutes les cartes</a>
-					<a href="#" data-category="familiers">Familiers</a>
-					<a href="#" data-category="armes">Armes</a>
-					<a href="#" data-category="sorts">Sorts</a>
+			<div class="filter-buttons">
+				<div class="dropdown" id="category-dropdown-wrap">
+					<button class="dropdown-btn" id="category-btn">Catégorie de carte</button>
+					<div class="dropdown-content" id="category-dropdown">
+						<a href="#" data-category="tous">Toutes les cartes</a>
+						<a href="#" data-category="familiers">Familiers</a>
+						<a href="#" data-category="armes">Armes</a>
+						<a href="#" data-category="sorts">Sorts</a>
+					</div>
+				</div>
+				<div class="dropdown" id="type-dropdown-wrap">
+					<button class="dropdown-btn" id="type-btn">Type de familier</button>
+					<div class="dropdown-content" id="type-dropdown">
+						<a href="#" data-type="tous">Tous les types</a>
+						<a href="#" data-type="feroce">Féroce</a>
+						<a href="#" data-type="ruse">Rusé</a>
+						<a href="#" data-type="tenace">Tenace</a>
+					</div>
+				</div>
+				<div class="dropdown" id="rarity-dropdown-wrap">
+					<button class="dropdown-btn" id="rarity-btn">Rareté de familier</button>
+					<div class="dropdown-content" id="rarity-dropdown">
+						<a href="#" data-rarity="tous">Toutes les raretés</a>
+						<a href="#" data-rarity="commune">Commune</a>
+						<a href="#" data-rarity="exotique">Exotique</a>
+					</div>
 				</div>
 			</div>
-			<div class="dropdown" id="type-dropdown-wrap">
-				<button class="dropdown-btn" id="type-btn">Type de familier</button>
-				<div class="dropdown-content" id="type-dropdown">
-					<a href="#" data-type="tous">Tous les types</a>
-					<a href="#" data-type="feroce">Féroce</a>
-					<a href="#" data-type="ruse">Rusé</a>
-					<a href="#" data-type="tenace">Tenace</a>
+			<div class="filter-sliders">
+				<div class="attack-filter">
+					<label for="attack-min">Attaque</label>
+					<div class="double-range">
+						<input type="range" id="attack-min" min="1" max="6" value="1" step="1" aria-label="Attaque min">
+						<input type="range" id="attack-max" min="1" max="6" value="6" step="1" aria-label="Attaque max">
+					</div>
+					<div class="range-values"><span id="attack-min-val">1</span> — <span id="attack-max-val">6</span></div>
 				</div>
-			</div>
-			<div class="dropdown" id="rarity-dropdown-wrap">
-				<button class="dropdown-btn" id="rarity-btn">Rareté de familier</button>
-				<div class="dropdown-content" id="rarity-dropdown">
-					<a href="#" data-rarity="tous">Toutes les raretés</a>
-					<a href="#" data-rarity="commune">Commune</a>
-					<a href="#" data-rarity="exotique">Exotique</a>
+				<div class="life-filter">
+					<label for="life-min">Vie / Coût</label>
+					<div class="double-range">
+						<input type="range" id="life-min" min="1" max="6" value="1" step="1" aria-label="Vie min">
+						<input type="range" id="life-max" min="1" max="6" value="6" step="1" aria-label="Vie max">
+					</div>
+					<div class="range-values"><span id="life-min-val">1</span> — <span id="life-max-val">6</span></div>
 				</div>
-			</div>
-			<div class="attack-filter">
-				<label for="attack-min">Attaque</label>
-				<div class="double-range">
-					<input type="range" id="attack-min" min="1" max="6" value="1" step="1" aria-label="Attaque min">
-					<input type="range" id="attack-max" min="1" max="6" value="6" step="1" aria-label="Attaque max">
-				</div>
-				<div class="range-values"><span id="attack-min-val">1</span> — <span id="attack-max-val">6</span></div>
-			</div>
-			<div class="life-filter">
-				<label for="life-min">Vie / Coût</label>
-				<div class="double-range">
-					<input type="range" id="life-min" min="1" max="6" value="1" step="1" aria-label="Vie min">
-					<input type="range" id="life-max" min="1" max="6" value="6" step="1" aria-label="Vie max">
-				</div>
-				<div class="range-values"><span id="life-min-val">1</span> — <span id="life-max-val">6</span></div>
 			</div>
 		</div>
 		<p id="search-results">cartes trouvées avec la recherche de filtres</p>

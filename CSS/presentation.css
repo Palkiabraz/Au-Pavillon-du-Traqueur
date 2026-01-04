@@ -45,32 +45,65 @@ button.button-rules {
     text-align: center; 
 }
 
+.button-rules img:hover, .familier-image:hover, .arme-image:hover, .sort-image:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s; 
+}
+
 .quote {
     display: block; 
     text-align: center;
     margin: 0 auto; 
 }
 
-.familier-section, .sort-section {
+.familier-section {
     display: flex;
+    position: relative;
     align-items: center; 
     gap: 2rem;
-    margin: 2rem 0; 
+    margin: 0.25rem 0; 
     padding: 1rem;
+    padding-top: 6.6rem;
+}
+
+.familier-section h2 {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.75rem;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    z-index: 40;
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    pointer-events: none;
+}
+
+.familier-section .quote {
+    position: absolute;
+    left: 1.5rem;
+    top: 4rem;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    z-index: 40;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    pointer-events: none;
 }
 
 .familier-image {
+    position: relative;
+    z-index: 30;
     width: 300px;
     height: auto;
     margin-left: 1rem;
 }
 
-.button-rules img:hover, .familier-image:hover, .arme-image:hover, .sort-image:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s; 
-}
-
-.familier-text, .sort-text {
+.familier-text {
+    position: static;
     max-width: 600px; 
     font-family: Arial, sans-serif;
     color: #fff;
@@ -112,15 +145,45 @@ button.button-rules {
 }
 
 .arme-section {
-    display: flex; 
+    display: flex;
+    position: relative;
     justify-content: flex-end; 
     align-items: center; 
     gap: 0; 
-    margin: 2rem 0; 
+    margin: 0.25rem 0; 
     padding: 1rem;
+    padding-top: 6.6rem;
+}
+.arme-section h2 {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.75rem;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    z-index: 40;
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    text-align: right;
+    pointer-events: none;
+}
+
+.arme-section .quote {
+    position: absolute;
+    right: 1.5rem;
+    top: 4rem;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    z-index: 40;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: right;
+    pointer-events: none;
 }
 
 .arme-text {
+    position: static;
     max-width: 600px; 
     font-family: Arial, sans-serif;
     color: #fff;
@@ -129,17 +192,70 @@ button.button-rules {
 }
 
 .arme-image {
+    position: relative;
+    z-index: 30; 
     width: 300px; 
     height: auto; 
-    margin-right: 1rem; 
+    margin-right: 1rem;
 }
 
 .cout {
     color: #FFCC00; 
 }
 
+.sort-section {
+    position: relative;
+    display: flex;
+    align-items: center; 
+    gap: 2rem;
+    margin: 0.25rem 0; 
+    padding: 1rem;
+    padding-top: 6.6rem;
+}
+
+.sort-section h2 {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.75rem;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    z-index: 40;
+    margin: 0;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    pointer-events: none;
+}
+
+.sort-section .quote {
+    position: absolute;
+    left: 1.5rem;
+    top: 4rem;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    z-index: 40;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    pointer-events: none;
+}
+
 .sort-image {
+    position: relative;
+    z-index: 30;
     width: auto;
     height: 300px;
     margin-left: 0.55rem;
+    
+}
+
+.sort-text {
+    position: static;
+    max-width: 600px; 
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.sort-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
 }

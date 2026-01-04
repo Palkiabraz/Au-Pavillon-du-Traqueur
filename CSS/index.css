@@ -1,9 +1,11 @@
 .logo-index-placement{
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2vh 2vw;
+    text-align: center;
 }
 
 .logo-index{
@@ -33,4 +35,23 @@
     top: 1rem;
     right: 1rem;
     z-index: 9999;
+}
+
+.logo-credit {
+    font-size: 0.75rem;
+    margin-top: 6px;
+    color: #ffffff;
+    font-style: italic;
+}
+
+.logo-credit a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 400;
+}
+
+.logo-credit a:hover {
+    text-decoration: none;
+    font-weight: 700;
 }

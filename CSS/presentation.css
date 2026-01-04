@@ -62,7 +62,7 @@ button.button-rules {
 .familier-image {
     width: 300px;
     height: auto;
-    margin-left: 15rem;
+    margin-left: 1rem;
 }
 
 .button-rules img:hover, .familier-image:hover, .arme-image:hover, .sort-image:hover {
@@ -131,7 +131,7 @@ button.button-rules {
 .arme-image {
     width: 300px; 
     height: auto; 
-    margin-right: 15rem; 
+    margin-right: 1rem; 
 }
 
 .cout {
@@ -141,5 +141,5 @@ button.button-rules {
 .sort-image {
     width: auto;
     height: 300px;
-    margin-left: 8.3rem;
+    margin-left: 0.55rem;
 }

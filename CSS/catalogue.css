@@ -340,11 +340,35 @@
         gap: 0.75rem;
     }
 
+    .catalogue {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .catalogue-sorts {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .search-container {
         margin-left: 0;
     }
 
     #search-bar {
         width: 50%;
+    }
+
+    .filter-buttons {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    #category-dropdown-wrap, #type-dropdown-wrap {
+        order: 1;
+    }
+
+    #rarity-dropdown-wrap {
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }

@@ -116,7 +116,7 @@ body {
     display: inline-block;
     font-weight: normal; 
     font-family: 'Lifecraft';
-    font-size: clamp(0.9rem, 1.6vw, 1.2rem); /* reduced font-size only */
+    font-size: clamp(1.05rem, 1.9vw, 1.6rem); /* larger menu font on non-mobile screens */
     width: auto;
     min-width: 0;
     flex: 0 1 auto;

@@ -92,17 +92,47 @@ button.button-printable, button.button-workshop, button.button-steam {
     margin: 0;
 }
 
-@media (max-width: 980px) and (min-width: 661px) {
+@media (max-width: 600px) {
     .buttons-container {
-        flex-wrap: wrap;
+        flex-direction: row;
+        flex-wrap: wrap; 
+        gap: 1rem;
+        justify-content: center;
+        align-items: flex-start;
     }
-    .buttons-container>* {
-        flex: 1 1 34%;
-    }
-}
 
-@media (max-width: 660px) {
-    .buttons-container {
-        flex-direction: column;
+    .buttons-container > * {
+        flex: 0 0 34%;
+        max-width: 360px;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .buttons-container a {
+        display: inline-flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .buttons-container a img {
+        height: auto;
+        max-width: 120px;
+        margin: 0 0 0.25rem 0; 
+    }
+
+    .buttons-container .button-text, .button-printable .button-text, .button-workshop .button-text, .button-steam .button-text {
+        font-size: 0.95rem;
+    }
+
+    .button-printable a, .button-workshop a, .button-steam a {
+        padding: 0.4rem;
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+
+    .first-subtitle, .second-subtitle {
+        width: auto !important;
+        max-width: none !important;
+        margin: 0.25rem 1rem !important;
     }
 }

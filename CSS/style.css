@@ -180,7 +180,7 @@ h2 {
 
 @media (max-width: 600px) {
     .menu {
-        overflow-x: auto; /* allow horizontal scroll instead of wrapping */
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
     .menu ul {
@@ -188,15 +188,15 @@ h2 {
         gap: 0.5rem;
         justify-content: center;
         width: 100%;
-        flex-wrap: nowrap; /* force single line */
+        flex-wrap: nowrap;
     }
     .menu a {
-        font-size: clamp(0.85rem, 2.0vw, 1.05rem); /* slightly smaller on small screens */
+        font-size: clamp(0.85rem, 2.0vw, 1.05rem); 
         min-width: 0;
         padding: 0.4rem 0.6rem;
-        white-space: nowrap; /* prevent link text wrapping */
+        white-space: nowrap; 
         text-align: center;
-        flex: 0 0 auto; /* avoid shrinking so items stay on one line */
+        flex: 0 0 auto; 
     }
 
     .logo img {

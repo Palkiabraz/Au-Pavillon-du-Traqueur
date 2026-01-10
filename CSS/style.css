@@ -208,4 +208,12 @@ h2 {
         height: 36px;
         width: auto;
     }
+
+    .footer {
+        font-size: 0.85rem;
+    }
+
+    .footer a, .footer a:visited {
+        font-size: 0.85rem;
+    }
 }

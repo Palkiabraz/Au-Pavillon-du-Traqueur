@@ -261,6 +261,26 @@ button.button-rules {
 }
 
 @media (max-width: 600px) {
+    .button-rules {
+        width: 95%;
+        padding: 0.6rem;
+        font-size: 1rem;
+        margin: 0.5rem auto;
+    }
+
+    .button-rules a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .button-rules img {
+        width: 40px;
+        height: auto;
+        margin: 0;
+    }
+
     .familier-section, .arme-section, .sort-section {
         flex-direction: column;
         align-items: center;

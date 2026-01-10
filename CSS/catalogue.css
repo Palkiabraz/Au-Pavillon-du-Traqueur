@@ -333,7 +333,7 @@
     gap: 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .catalogue, .catalogue-sorts {
         margin: 0 1rem 1.5rem; 
         max-width: none;

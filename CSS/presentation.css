@@ -291,6 +291,8 @@ button.button-rules {
         padding-top: 1.5rem;
         padding-left: 1rem;
         padding-right: 1rem;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .familier-section h2, .arme-section h2, .sort-section h2 {

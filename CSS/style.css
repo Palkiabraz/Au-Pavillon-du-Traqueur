@@ -203,4 +203,9 @@ h2 {
         height: 120px;
         width: auto;
     }
+
+    body:not(.index) .bg-toggle img {
+        height: 36px;
+        width: auto;
+    }
 }

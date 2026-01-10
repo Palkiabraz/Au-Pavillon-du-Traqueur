@@ -180,7 +180,7 @@ h2 {
 
 @media (max-width: 600px) {
     .menu {
-        overflow-x: visible;
+        overflow-x: auto; /* allow horizontal scroll instead of wrapping */
         -webkit-overflow-scrolling: touch;
     }
     .menu ul {
@@ -188,14 +188,15 @@ h2 {
         gap: 0.5rem;
         justify-content: center;
         width: 100%;
-        flex-wrap: wrap;
+        flex-wrap: nowrap; /* force single line */
     }
     .menu a {
         font-size: clamp(0.9rem, 2.2vw, 1.15rem);
         min-width: 0;
         padding: 0.4rem 0.6rem;
-        white-space: normal;
+        white-space: nowrap; /* prevent link text wrapping */
         text-align: center;
+        flex: 0 0 auto; /* avoid shrinking so items stay on one line */
     }
 
     .logo img {

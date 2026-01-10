@@ -61,7 +61,8 @@ button.button-rules {
     position: relative;
     align-items: center; 
     gap: 2rem;
-    margin: 0.25rem 0; 
+    margin: 0.25rem 0;
+    margin-left: 15rem; 
     padding: 1rem;
     padding-top: 6.6rem;
 }
@@ -150,7 +151,8 @@ button.button-rules {
     justify-content: flex-end; 
     align-items: center; 
     gap: 0; 
-    margin: 0.25rem 0; 
+    margin: 0.25rem 0;
+    margin-right: 15rem; 
     padding: 1rem;
     padding-top: 6.6rem;
 }
@@ -208,7 +210,8 @@ button.button-rules {
     display: flex;
     align-items: center; 
     gap: 2rem;
-    margin: 0.25rem 0; 
+    margin: 0.25rem 0;
+    margin-left: 8.5rem; 
     padding: 1rem;
     padding-top: 6.6rem;
 }

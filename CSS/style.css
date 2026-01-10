@@ -93,21 +93,20 @@ body {
 .menu{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.55);
-    padding: 0.5rem 0;
+    padding: 0.5rem 0.5rem;
+    overflow-x: visible;
 }
 
 .menu ul{
     list-style: none;
-    margin: auto;
-    padding: 0 1rem;
+    margin: 0;
+    padding: 0 0.5rem;
     display: flex;
     justify-content: center;
     gap: 1rem;
     align-items: center;
-    width: 100%;
+    width: auto;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 .menu a{
@@ -180,9 +179,15 @@ h2 {
 }
 
 @media (max-width: 600px) {
+    .menu {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
     .menu ul {
         padding: 0 0.5rem;
         gap: 0.5rem;
+        justify-content: flex-start;
+        width: max-content;
     }
     .menu a {
         font-size: clamp(0.9rem, 2.2vw, 1.15rem);

@@ -11,6 +11,18 @@
     text-align: center;
 }
 
+.first-subtitle {
+    width: 50%;
+    max-width: 710px;
+    margin: 0 auto;
+}
+
+.second-subtitle {
+    width: 69%;
+    max-width: 904px;
+    margin: 0 auto;
+}
+
 .buttons-container {
     display: flex; 
     justify-content: center; 
@@ -78,4 +90,19 @@ button.button-printable, button.button-workshop, button.button-steam {
     font-size: 1.2rem;
     text-align: center;
     margin: 0;
+}
+
+@media (max-width: 980px) and (min-width: 661px) {
+    .buttons-container {
+        flex-wrap: wrap;
+    }
+    .buttons-container>* {
+        flex: 1 1 34%;
+    }
+}
+
+@media (max-width: 660px) {
+    .buttons-container {
+        flex-direction: column;
+    }
 }

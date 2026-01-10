@@ -27,18 +27,6 @@ button, button *, a, a *, input, input *, .catalogue-card, .catalogue-card * {
     cursor: url("../Images/Curseurs/Pointer.png"), auto !important;
 }
 
-.first-subtitle {
-    width: 50%;
-    max-width: 710px;
-    margin: 0 auto;
-}
-
-.second-subtitle {
-    width: 69%;
-    max-width: 904px;
-    margin: 0 auto;
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -117,7 +105,9 @@ body {
     gap: 1rem;
     align-items: center;
     width: 100%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .menu a{
@@ -127,9 +117,11 @@ body {
     display: inline-block;
     font-weight: normal; 
     font-family: 'Lifecraft';
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 1.8vw, 1.5rem);
     width: auto;
-    min-width: 120px;
+    min-width: 0;
+    flex: 0 1 auto;
+    white-space: nowrap;
     text-align: center;
     box-sizing: border-box;
 }
@@ -193,7 +185,7 @@ h2 {
         gap: 0.5rem;
     }
     .menu a {
-        font-size: 1.15rem;
+        font-size: clamp(0.9rem, 2.2vw, 1.15rem);
         min-width: 0;
         padding: 0.4rem 0.6rem;
     }

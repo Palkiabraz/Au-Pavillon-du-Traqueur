@@ -92,6 +92,13 @@ button.button-printable, button.button-workshop, button.button-steam {
     margin: 0;
 }
 
+#ttprice {
+    color: #fff;
+    font-family: Arial;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+}
+
 @media (max-width: 600px) {
     .buttons-container {
         flex-direction: row;

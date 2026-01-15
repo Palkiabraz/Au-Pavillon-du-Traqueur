@@ -96,7 +96,24 @@ button.button-printable, button.button-workshop, button.button-steam {
     color: #fff;
     font-family: Arial;
     font-size: 1rem;
-    margin-top: 0.25rem;
+    margin: 0;
+}
+
+.button-with-price {
+    position: relative;
+    display: inline-block;
+}
+
+.button-with-price #ttprice {
+    position: absolute;
+    top: 8px; 
+    right: 8px;
+    font-weight: bold;
+    color: #fff;
+    font-family: Arial;
+    font-size: 1.4rem;
+    margin: 0;
+    pointer-events: none;
 }
 
 @media (max-width: 600px) {
@@ -135,6 +152,10 @@ button.button-printable, button.button-workshop, button.button-steam {
     .button-printable a, .button-workshop a, .button-steam a {
         padding: 0.4rem;
         background-color: rgba(0, 0, 0, 0.45);
+    }
+
+    .button-with-price #ttprice {
+        font-size: 1rem;
     }
 
     .first-subtitle, .second-subtitle {

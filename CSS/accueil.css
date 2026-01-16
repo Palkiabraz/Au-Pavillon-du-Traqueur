@@ -165,8 +165,8 @@ button.button-printable, button.button-workshop, button.button-steam {
     }
 
     .button-with-price #ttprice {
-    top: 2px; 
-    right: 2px;
-    font-size: 1rem;
+        top: 2px; 
+        right: 2px;
+        font-size: 1rem;
     }
 }

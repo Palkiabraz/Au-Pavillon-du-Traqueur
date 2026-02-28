@@ -18,4 +18,27 @@ function submitForm() {
     }).catch(() => {
         console.error("Erreur lors de l'envoi du formulaire.");
     });
-}
+};
+    
+document.addEventListener('DOMContentLoaded', function(){
+	var btn = document.getElementById('contact-btn');
+	var box = document.getElementById('contact');
+	setTimeout(function(){
+		btn.classList.add('show');
+		setTimeout(function(){
+			btn.style.transform = 'scale(1)';
+			box.classList.add('visible');
+			box.setAttribute('aria-hidden','false');
+		}, 420);
+	}, 200);
+
+	btn.addEventListener('click', function(){
+		if(box.classList.contains('visible')){
+			box.classList.remove('visible');
+			box.setAttribute('aria-hidden','true');
+		}else{
+			box.classList.add('visible');
+			box.setAttribute('aria-hidden','false');
+		}
+	});
+})

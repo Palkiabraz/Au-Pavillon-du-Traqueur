@@ -36,7 +36,7 @@
 	</header>
 	<button class="button-rules">
 		<a href="./Fichiers/Regles_du_jeu.pdf" download class="button-rules">
-			<img src="./Images/Regles.png" alt="Télécharger les règles du jeu">
+			<img src="./Images/Regles.jpg" alt="Télécharger les règles du jeu">
 			<span class="button-text">Envie de prouver votre valeur, chasseur d'Azeroth ?
 				<br>Obtenez les règles du jeu, et lancez-vous !
 			</span>
@@ -101,16 +101,6 @@
 			<b>piqûre</b> et de <b>tir</b>.
 		</div>
 	</div>
-	<div id="contact">
-		<h2>jsp titre tu feras aprè-s</h2>
-		<label for="name">Nom :</label>
-		<input type="text" id="name" name="name" required>
-		<label for="email">Email :</label>
-		<input type="email" id="email" name="email" required>
-		<label for="message">Message :</label>
-		<textarea id="message" name="message" rows="5" required></textarea>
-		<button type="submit" onclick="submitForm()">Envoyer</button>
-	</div>
 	<footer>
 		<div class="footer">
 			<p><i><u>Au Pavillon du Traqueur</u> se conforme aux conditions générales d'utilisation demandées par
@@ -120,6 +110,21 @@
 							target="_blank" rel="noopener noreferrer">Atelier 197<a></i></u></p>
 		</div>
 	</footer>
+	<button id="contact-btn" aria-label="Contact">
+		<img id="contact-icon" src="./Images/Contact.jpg" alt="Contact" onerror="this.onerror=null;this.src='./Images/Contact.png';">
+	</button>
+	<form id="contact" aria-hidden="true">
+		<h3>Envie de me contacter ? </h3>
+		<label for="name">Nom</label>
+		<input type="text" id="name" name="name" required>
+		<label for="email">Mail ou Discord</label>
+		<input type="email" id="email" name="email" required>
+		<label for="message">Message</label>
+		<textarea id="message" name="message" rows="5" required></textarea>
+		<div class="submit-row">
+			<button type="button" onclick="submitForm()">Envoyer</button>
+		</div>
+	</form>
 	<script src="./JS/daynight.js"></script>
 	<script src="./JS/switch.js"></script>
 	<script src="./JS/formulaire.js"></script>

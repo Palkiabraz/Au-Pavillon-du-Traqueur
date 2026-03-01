@@ -415,7 +415,7 @@ function applyFilters() {
                 lifeMatch = (lp >= lifeMin && lp <= lifeMax);
             }
             const show = nameMatch && typeMatch && rarityMatch && attackMatch && lifeMatch;
-            // Si l'image est encapsulée dans .card-wrapper, masquer le wrapper au lieu de l'image
+            // Si l'image est dans .card-wrapper, cacher le wrapper entier au lieu de l'image
             const wrapper = img.closest('.card-wrapper');
             if (wrapper) {
                 wrapper.style.display = show ? 'flex' : 'none';
@@ -486,7 +486,7 @@ function applyFilters() {
         totalVisible += visible;
     }
     const searchResults = document.getElementById("search-results");
-    searchResults.textContent = totalVisible === 1 ? "1 carte trouvée avec la recherche de filtres" : `${totalVisible} cartes trouvées avec la recherche de filtres`;
+    searchResults.textContent = totalVisible === 1 ? "1 card found using search filters " : `${totalVisible} cards found using search filters`;
 }
 applyFilters();
 
@@ -529,7 +529,7 @@ applyFilters();
         cap.className = 'card-caption';
         // Texte spécifique pour l'ensemble Fondamental
         if (typeof extension === 'string' && extension.toLowerCase() === 'fondamental') {
-            cap.textContent = "Disponible depuis le jeu de base";
+            cap.textContent = "Available in the base game";
         } else {
             cap.textContent = extension;
         }
@@ -577,7 +577,7 @@ applyFilters();
             const cap = document.createElement('div');
             cap.className = 'card-caption';
             if (typeof extension === 'string' && extension.toLowerCase() === 'fondamental') {
-                cap.textContent = "Disponible depuis le jeu de base";
+                cap.textContent = "Available in the base game";
             } else {
                 cap.textContent = extension;
             }

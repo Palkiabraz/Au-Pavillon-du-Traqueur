@@ -486,7 +486,7 @@ function applyFilters() {
         totalVisible += visible;
     }
     const searchResults = document.getElementById("search-results");
-    searchResults.textContent = totalVisible === 1 ? "1 card found using search filters " : `${totalVisible} cards found using search filters`;
+    searchResults.textContent = totalVisible === 1 ? "1 carte trouvée en utilisant les filtres de recherche" : `${totalVisible} cartes trouvées en utilisant les filtres de recherche`;
 }
 applyFilters();
 

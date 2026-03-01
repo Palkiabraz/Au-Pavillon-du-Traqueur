@@ -229,6 +229,16 @@ h2 {
     border-radius: 0;
 }
 
+#contact-btn img {
+    transition: transform 0.3s;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+#contact-btn:hover img, #contact-btn:focus img {
+    transform: scale(1.1);
+}
+
 #contact {
     position: fixed;
     right: 24px;
@@ -300,6 +310,15 @@ h2 {
     cursor: pointer;
     font-family: 'Lifecraft', sans-serif;
     font-size: 1rem;
+}
+
+#contact h3 {
+    font-size: 1.35rem;
+}
+
+#contact .submit-row button {
+    font-size: 1.1rem;
+    padding: 10px 14px;
 }
 
 #contact .submit-row button:hover {

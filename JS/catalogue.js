@@ -415,7 +415,7 @@ function applyFilters() {
                 lifeMatch = (lp >= lifeMin && lp <= lifeMax);
             }
             const show = nameMatch && typeMatch && rarityMatch && attackMatch && lifeMatch;
-            // if image is wrapped in .card-wrapper, hide the wrapper instead of the image
+            // Si l'image est encapsulée dans .card-wrapper, masquer le wrapper au lieu de l'image
             const wrapper = img.closest('.card-wrapper');
             if (wrapper) {
                 wrapper.style.display = show ? 'flex' : 'none';

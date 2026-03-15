@@ -166,14 +166,8 @@ button.button-download {
         margin: 0;
     }
 
-    .extension-column {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 5px;
-    }
-
     .extension-content{
-        grid-template-columns: 1fr; /* une seule colonne */
-        gap: 40px; /* espace entre les blocs */
+        grid-template-columns: 1fr; 
+        gap: 40px; 
     }
 }

@@ -364,7 +364,7 @@
     }
 
     .dropdown {
-        width: 250px;
+        width: 150px;
         display: inline-block;
     }
 
@@ -375,7 +375,7 @@
     }
 
     .dropdown-content {
-        width: 250px;
+        width: 150px;
         box-sizing: border-box;
         left: 0;
     }

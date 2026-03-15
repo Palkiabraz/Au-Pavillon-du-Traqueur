@@ -409,11 +409,18 @@ h2 {
 
     .menu .dropdown {
         min-width: 50px;
-        margin-top: 5px;
+        margin-top: 6px;
     }
 
     .menu .dropdown li a {
         font-size: clamp(0.65rem, 2.0vw, 1.05rem); 
+    }
+
+    .menu .menu-btn {
+        font-size: clamp(0.65rem, 2.0vw, 1.05rem); 
+        line-height: 1;                             
+        vertical-align: middle;                     
+        padding: 0.4rem 0.6rem;                    
     }
 
     .logo img {

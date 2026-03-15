@@ -7,21 +7,21 @@
 	<title>Au Pavillon du Traqueur</title>
 	<link rel="stylesheet" href="./CSS/style.css">
 	<link rel="stylesheet" href="./CSS/accueil.css">
-	<link rel="icon" href="./Images/Icone.png" />
+	<link rel="icon" href="./Images/Logos/Icone.png">
 </head>
 
 <body>
 	<header class="header">
 		<div class="header-top">
 			<div class="logo">
-				<img src="./Images/Logo.PNG" alt="Logo" height="250 px">
+				<img src="./Images/Logos/Principal.PNG" alt="Logo principal" height="250 px">
 			</div>
 			<div class="header-controls">
-				<button id="flag-btn" class="flag-btn" aria-label="Passer en anglais" data-url="https://palkiabraz.github.io/In-the-Trueshot-Lodge/accueil.html">
-					<img src="./Images/Switch.jpg" alt="Passer en anglais" title="Switch to English">
+				<button id="flag-btn" class="flag-btn" aria-label="Passer en anglais" data-url="https://palkiabraz.github.io/In-the-Trueshot-Lodge/home.html">
+					<img src="./Images/Icones/Switch.jpg" alt="Passer en anglais" title="Switch to English">
 				</button>
 				<button id="bg-toggle" class="bg-toggle" aria-label="Changer le fond">
-					<img src="./Images/Daynight.jpg" alt="Changer le fond" title="Passer en mode jour ou nuit">
+					<img src="./Images/Icones/Daynight.jpg" alt="Changer le fond" title="Passer en mode jour ou nuit">
 				</button>
 			</div>
 		</div>
@@ -29,8 +29,13 @@
 			<ul>
 				<li><a href="accueil.html">Accueil</a></li>
 				<li><a href="presentation.html">Presentation</a></li>
-				<li><a href="catalogue.html">Catalogue de cartes</a></li>
-				<li><a href="extensions.html">Extensions</a></li>
+				<li><a href="catalogue-de-cartes.html">Catalogue de cartes</a></li>
+				<li class="menu-extensions">
+					<button id="extensions-btn" class="menu-btn" aria-expanded="false" aria-controls="extensions-dropdown">Extensions</button>
+					<ul id="extensions-dropdown" class="dropdown">
+						<li><a href="extensions-mineures.html">Extensions mineures</a></li>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 	</header>
@@ -98,7 +103,7 @@
 		</div>
 	</footer>
 	<button id="contact-btn" aria-label="Contact">
-		<img id="contact-icon" src="./Images/Contact.jpg" alt="Contact" title="Afficher le formulaire de contact" onerror="this.onerror=null;this.src='./Images/Contact.png';">
+		<img id="contact-icon" src="./Images/Icones/Contact.jpg" alt="Contact" title="Afficher le formulaire de contact" onerror="this.onerror=null;this.src='../Images/Icones/Contact.jpg';">
 	</button>
 	<form id="contact" aria-hidden="true">
 		<h3>Envie de me contacter ? </h3>
@@ -116,5 +121,6 @@
 	<script src="./JS/prix.js"></script>
 	<script src="./JS/switch.js"></script>
 	<script src="./JS/formulaire.js"></script>
+	<script src="./JS/extensions.js"></script>
 </body>
 </html>

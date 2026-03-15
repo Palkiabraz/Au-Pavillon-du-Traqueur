@@ -2,3 +2,4 @@
 
 ### VOYAGE PARCOURU
 <ins>11 Janvier 2026 :</ins> Sortie (française) du jeu
+<ins>15 Mars 2026 :</ins> Sortie de l'extension mineure "Shadowlands"

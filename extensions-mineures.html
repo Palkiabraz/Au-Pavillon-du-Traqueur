@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Au Pavillon du Traqueur</title>
+	<link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/extensions.css">
+	<link rel="icon" href="./Images/Logos/Icone.png">
+</head>
+
+<body>
+	<header class="header">
+		<div class="header-top">
+			<div class="logo">
+				<img src="./Images/Logos/Principal.PNG" alt="Logo principal" height="250 px">
+			</div>
+			<div class="header-controls">
+				<button id="flag-btn" class="flag-btn" aria-label="Passer en anglais" data-url="https://palkiabraz.github.io/In-the-Trueshot-Lodge/expansions.html">
+					<img src="./Images/Icones/Switch.jpg" alt="Passer en anglais" title="Switch to English">
+				</button>
+				<button id="bg-toggle" class="bg-toggle" aria-label="Changer le fond">
+					<img src="./Images/Icones/Daynight.jpg" alt="Changer le fond" title="Passer en mode jour ou nuit">
+				</button>
+			</div>
+		</div>
+		<nav class="menu">
+			<ul>
+				<li><a href="accueil.html">Accueil</a></li>
+				<li><a href="presentation.html">Presentation</a></li>
+				<li><a href="catalogue-de-cartes.html">Catalogue de cartes</a></li>
+				<li class="menu-extensions">
+					<button id="extensions-btn" class="menu-btn" aria-expanded="false" aria-controls="extensions-dropdown">Extensions</button>
+					<ul id="extensions-dropdown" class="dropdown">
+						<li><a href="extensions-mineures.html">Extensions mineures</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+<section class="extension">
+	<div class="extension-header">
+    	<div class="extension-logo-title">
+        	<img src="./Images/Logos/Shadowlands.png" alt="Shadowlands" class="extension-logo">
+        	<h1 class="extension-title">Shadowlands</h1>
+    	</div>
+    	<p class="extension-description">L’extension mineure "Shadowlands" ajoute onze cartes dont trois familiers, quatre armes et quatre sorts</p>
+	</div>
+    <div class="extension-content">
+        <div class="extension-column">
+			<div class="card">
+    			<img src="./Images/Icones/Shadowlands/Coursier.jpg">
+    			<p class="card-caption">Coursier</p>
+			</div>
+			<div class="card">
+    			<img src="./Images/Icones/Shadowlands/Dromadaire.jpg">
+    			<p class="card-caption">Dromadaire</p>
+			</div>
+			<div class="card">
+    			<img src="./Images/Icones/Shadowlands/Mammouth.jpg">
+    			<p class="card-caption">Mammouth</p>
+			</div>
+        </div>
+        <div class="extension-column">
+			<div class="card">
+    			<img src="./Images/Icones/Shadowlands/Jotungeirr.jpg">
+    			<p class="card-caption">Jotungeirr</p>
+			</div>
+			<div class="card">
+    			<img src="./Images/Icones/Shadowlands/Pointe-d_ame.jpg">
+    			<p class="card-caption">Pointe-d'âme</p>
+			</div>
+			<div class="card">
+    			<img src="./Images/Icones/Shadowlands/Rae_Shalare.jpg">
+    			<p class="card-caption">Rae'shalare</p>
+			</div>
+			<div class="card">
+    			<img src="./Images/Icones/Shadowlands/Zovastrum.jpg">
+    			<p class="card-caption">Zovastrum</p>
+			</div>			
+        </div>
+        <div class="extension-column">
+			<div class="card">
+    			<img src="./Images/Icones/Shadowlands/Chakram_de_mort.jpg">
+    			<p class="card-caption">Chakram de mort</p>
+			</div>
+			<div class="card">
+    			<img src="./Images/Icones/Shadowlands/Esprits_sauvages.jpg">
+    			<p class="card-caption">Esprits sauvages</p>
+			</div>
+			<div class="card">
+    			<img src="./Images/Icones/Shadowlands/Fleche_resonnante.jpg">
+    			<p class="card-caption">Flèche résonnante</p>
+			</div>
+			<div class="card">
+    			<img src="./Images/Icones/Shadowlands/Tir_ecorcheur.jpg">
+    			<p class="card-caption">Tir écorcheur</p>
+			</div>
+        </div>
+    </div>
+	<div class="extension-header">
+		<p class="extension-description">"Flèche résonnante" est considérée comme un sort de flèche
+			<br>"Tir écorcheur" est considéré comme un sort de tir</p>
+	</div>
+	<button class="button-download">
+		<a href="./Fichiers/Shadowlands.zip" download class="button-download">
+			<img src="./Images/Icones/Extension.jpg" alt="Télécharger l'extension" title="Télécharger l'extension 'Shadowlands'">
+			<span class="button-text">Envie d'inviter l'Ombreterre au Pavillon du Traqueur ?
+				<br>Téléchargez la version imprimable de l'extension !
+			</span>
+		</a>
+	</button>
+</section>
+	<footer>
+		<div class="footer">
+			<p><i><u>Au Pavillon du Traqueur</u> se conforme aux conditions générales d'utilisation demandées par
+					Blizzard Entertainement tout en respectant les droits de propriété intellectuelle afférents à World
+					of Warcraft</i></p>
+			<p><i><u>Au Pavillon du Traqueur</u> est inscrit dans l'initiative <u><a href="https://atelier197.carrd.co/"
+							target="_blank" rel="noopener noreferrer">Atelier 197<a></i></u></p>
+		</div>
+	</footer>
+	<button id="contact-btn" aria-label="Contact">
+		<img id="contact-icon" src="./Images/Icones/Contact.jpg" alt="Contact" title="Afficher le formulaire de contact" onerror="this.onerror=null;this.src='../Images/Icones/Contact.jpg';">
+	</button>
+	<form id="contact" aria-hidden="true">
+		<h3>Envie de me contacter ? </h3>
+		<label for="name">Nom ou Pseudonyme</label>
+		<input type="text" id="name" name="name" required>
+		<label for="email">Mail ou Discord</label>
+		<input type="email" id="email" name="email" required>
+		<label for="message">Message</label>
+		<textarea id="message" name="message" rows="5" required></textarea>
+		<div class="submit-row">
+			<button type="button" onclick="submitForm()">Envoyer</button>
+		</div>
+	</form>
+	<script src="./JS/daynight.js"></script>
+	<script src="./JS/switch.js"></script>
+	<script src="./JS/formulaire.js"></script>
+	<script src="./JS/extensions.js"></script>
+</body>
+</html>

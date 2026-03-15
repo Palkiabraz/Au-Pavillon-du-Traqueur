@@ -404,7 +404,7 @@ h2 {
         white-space: nowrap; 
         text-align: center;
         flex: 0 0 auto;
-        font-size: 0.85rem;
+        font-size: 0.65rem;
     }
 
     .menu .dropdown {
@@ -413,7 +413,7 @@ h2 {
     }
 
     .menu .dropdown li a {
-        font-size: 0.85em;
+        font-size: 0.65em;
     }
 
     .logo img {

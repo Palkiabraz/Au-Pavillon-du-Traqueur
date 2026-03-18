@@ -16,8 +16,8 @@ function submitForm() {
 	notifDiv.classList.add('notification');
 	notifDiv.textContent = "Message envoyé !";
 	notifDiv.style.position = 'fixed';
-	notifDiv.style.bottom = '480px';
-	notifDiv.style.right = '156px';
+	notifDiv.style.bottom = '40px';
+	notifDiv.style.right = '88px';
 	document.body.appendChild(notifDiv);
 
 	setTimeout(() => {

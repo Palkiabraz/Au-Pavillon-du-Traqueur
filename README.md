@@ -2,4 +2,5 @@
 
 ### VOYAGE PARCOURU
 <ins>11 Janvier 2026 :</ins> Sortie (française) du jeu<br>
-<ins>15 Mars 2026 :</ins> Sortie de l'extension mineure "Shadowlands"
+<ins>15 Mars 2026 :</ins> Sortie de l'extension mineure "Shadowlands"<br>
+<ins>19 Avril 2026 :</ins> Sortie de l'extension majeure "Rassasié & Hydraté"

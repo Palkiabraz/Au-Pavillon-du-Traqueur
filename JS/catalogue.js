@@ -529,7 +529,7 @@ function applyFilters() {
     sortsTitle.style.display = visible > 0 ? "block" : "none";
     sortsCatalogue.style.display = visible > 0 ? "grid" : "none";
     totalVisible += visible;
-}
+    }
 
 // Compteur de résultats
     const searchResults = document.getElementById("search-results");

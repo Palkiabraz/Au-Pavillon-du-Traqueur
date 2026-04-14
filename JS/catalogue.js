@@ -347,9 +347,11 @@ function applyFilters() {
     const familiersCatalogue = document.getElementById("familiers-catalogue");
     const armesCatalogue = document.getElementById("armes-catalogue");
     const sortsCatalogue = document.getElementById("sorts-catalogue");
+    const nourritureCatalogue = document.getElementById("nourriture-catalogue");
     const familiersTitle = document.getElementById("familiers-title");
     const armesTitle = document.getElementById("armes-title");
     const sortsTitle = document.getElementById("sorts-title");
+    const nourritureTitle = document.getElementById("nourriture-title");
     let effectiveCategory = selectedCategory;
     if (selectedCategory === 'tous') {
         if (selectedType !== 'tous' || selectedRarity !== 'tous') {
@@ -362,30 +364,38 @@ function applyFilters() {
         familiersCatalogue.style.display = "grid";
         armesCatalogue.style.display = "grid";
         sortsCatalogue.style.display = "grid";
+        if (nourritureCatalogue) nourritureCatalogue.style.display = "grid";
         familiersTitle.style.display = "block";
         armesTitle.style.display = "block";
         sortsTitle.style.display = "block";
+        if (nourritureTitle) nourritureTitle.style.display = "block";
     } else if (effectiveCategory === 'familiers-armes') {
         familiersCatalogue.style.display = "grid";
         armesCatalogue.style.display = "grid";
         sortsCatalogue.style.display = "none";
+        if (nourritureCatalogue) nourritureCatalogue.style.display = "none";
         familiersTitle.style.display = "block";
         armesTitle.style.display = "block";
         sortsTitle.style.display = "none";
+        if (nourritureTitle) nourritureTitle.style.display = "none";
     } else if (effectiveCategory === 'familiers') {
         familiersCatalogue.style.display = "grid";
         armesCatalogue.style.display = "none";
         sortsCatalogue.style.display = "none";
+        if (nourritureCatalogue) nourritureCatalogue.style.display = "none";
         familiersTitle.style.display = "block";
         armesTitle.style.display = "none";
         sortsTitle.style.display = "none";
+        if (nourritureTitle) nourritureTitle.style.display = "none";
     } else if (effectiveCategory === 'armes') {
         familiersCatalogue.style.display = "none";
         armesCatalogue.style.display = "grid";
         sortsCatalogue.style.display = "none";
+        if (nourritureCatalogue) nourritureCatalogue.style.display = "none";
         familiersTitle.style.display = "none";
         armesTitle.style.display = "block";
         sortsTitle.style.display = "none";
+        if (nourritureTitle) nourritureTitle.style.display = "none";
     } else if (effectiveCategory === 'sorts') {
         familiersCatalogue.style.display = "none";
         armesCatalogue.style.display = "none";
@@ -393,6 +403,17 @@ function applyFilters() {
         familiersTitle.style.display = "none";
         armesTitle.style.display = "none";
         sortsTitle.style.display = "block";
+        if (nourritureCatalogue) nourritureCatalogue.style.display = "none";
+        if (nourritureTitle) nourritureTitle.style.display = "none";
+    } else if (effectiveCategory === 'nourriture') {
+        familiersCatalogue.style.display = "none";
+        armesCatalogue.style.display = "none";
+        sortsCatalogue.style.display = "none";
+        if (nourritureCatalogue) nourritureCatalogue.style.display = "grid";
+        familiersTitle.style.display = "none";
+        armesTitle.style.display = "none";
+        sortsTitle.style.display = "none";
+        if (nourritureTitle) nourritureTitle.style.display = "block";
     }
     let totalVisible = 0;
 
@@ -531,6 +552,36 @@ function applyFilters() {
     totalVisible += visible;
     }
 
+    // Bloc "Nourriture"
+    if (nourritureCatalogue && nourritureCatalogue.style.display !== "none") {
+        const cards = nourritureCatalogue.querySelectorAll(".catalogue-card");
+        let visible = 0;
+        cards.forEach(img => {
+            const normSearch = normalizeStr(searchValue);
+            const cardNameNorm = normalizeStr(img.alt);
+            const extra = extraKeywords[cardNameNorm] || img.dataset.keywords || '';
+
+            let expansionMatch = true;
+            if (selectedExpansion !== 'toutes') {
+                const e = (img.dataset.expansion || '').toLowerCase();
+                expansionMatch = e === selectedExpansion;
+            }
+
+            const show = expansionMatch && (cardNameNorm.includes(normSearch) || normalizeStr(extra).includes(normSearch));
+
+            const wrapper = img.closest('.card-wrapper');
+            if (wrapper) {
+                wrapper.style.display = show ? 'flex' : 'none';
+            } else {
+                img.style.display = show ? 'block' : 'none';
+            }
+            if (show) visible++;
+        });
+        if (nourritureTitle) nourritureTitle.style.display = visible > 0 ? "block" : "none";
+        nourritureCatalogue.style.display = visible > 0 ? "grid" : "none";
+        totalVisible += visible;
+    }
+
 // Compteur de résultats
     const searchResults = document.getElementById("search-results");
     searchResults.textContent = totalVisible === 1 ? "1 carte trouvée en utilisant les filtres de recherche" : `${totalVisible} cartes trouvées en utilisant les filtres de recherche`;
@@ -575,12 +626,19 @@ applyFilters();
         cap.className = 'card-caption';
 
         // Affiche une légende en fonction de l'extension
-        const expansion = img.dataset.expansion || '';
+        const expansion = (img.dataset.expansion || '').toLowerCase();
+        const expansionNames = {
+            'core': 'le jeu de base',
+            'shadowlands': 'Shadowlands',
+            'rassasie_et_hydrate': 'Rassasié et Hydraté'
+        };
 
         if (expansion === 'core') {
             cap.textContent = "Disponible dans le jeu de base";
+        } else if (expansionNames[expansion]) {
+            cap.textContent = "Disponible dans l'extension " + expansionNames[expansion];
         } else {
-            const formattedExpansion = expansion.charAt(0).toUpperCase() + expansion.slice(1).toLowerCase();
+            const formattedExpansion = expansion.replace(/_/g, ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
             cap.textContent = "Disponible dans l'extension " + formattedExpansion;
         }
         content.appendChild(cap);
@@ -626,11 +684,19 @@ applyFilters();
             const cap = document.createElement('div');
             cap.className = 'card-caption';
 
-            const expansion = img.dataset.expansion || '';
+            const expansion = (img.dataset.expansion || '').toLowerCase();
+            const expansionNames = {
+                'core': 'le jeu de base',
+                'shadowlands': 'Shadowlands',
+                'rassasie_et_hydrate': 'Rassasié et Hydraté'
+            };
+
             if (expansion === 'core') {
                 cap.textContent = "Disponible dans le jeu de base";
+            } else if (expansionNames[expansion]) {
+                cap.textContent = "Disponible dans l'extension " + expansionNames[expansion];
             } else {
-                const formattedExpansion = expansion.charAt(0).toUpperCase() + expansion.slice(1).toLowerCase();
+                const formattedExpansion = expansion.replace(/_/g, ' ').split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
                 cap.textContent = "Disponible dans l'extension " + formattedExpansion;
             }
             wrapper.appendChild(cap);

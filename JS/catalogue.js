@@ -23,11 +23,6 @@ const typeMenu = $id('type-dropdown');
 const rarityMenu = $id('rarity-dropdown');
 
 // Helpers généraux
-function setTextOrDefault(btn, selected, def) {
-    if (!btn) return;
-    btn.textContent = selected === 'toutes' || selected === 'tous' ? def : btn.dataset && btn.dataset.label ? btn.dataset.label : btn.textContent;
-}
-
 function setBtnTextFromAnchor(btn, selected, defaultLabel, label) {
     if (!btn) return;
     btn.textContent = (selected === 'toutes' || selected === 'tous') ? defaultLabel : label;
@@ -343,6 +338,7 @@ applyFilters();
         'rassasie_et_hydrate': 'Disponible dans l\'extension majeure "Rassasié & Hydraté"'
     };
 
+    // Génère une légende d'extension à partir du nom de l'extension, en utilisant les légendes prédéfinies si disponibles
     function expansionCaptionFallback(expansion){
         if (!expansion) return '';
         if (expansion === 'core') return 'Disponible dans le jeu de base';
@@ -389,7 +385,6 @@ applyFilters();
         content.className = 'overlay-content';
         content.appendChild(clone);
 
-        const extension = getExtensionForImage(img);
         const cap = document.createElement('div');
         cap.className = 'card-caption';
 

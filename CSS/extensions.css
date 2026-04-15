@@ -223,8 +223,9 @@ button.button-download {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-wrap: wrap;
-    word-wrap: break-word;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     padding: 0 2px;
 }
 

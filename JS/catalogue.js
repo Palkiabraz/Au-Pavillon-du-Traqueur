@@ -328,7 +328,7 @@ applyFilters();
     const expansionNames = {
         'core': 'le jeu de base',
         'shadowlands': 'Shadowlands',
-        'rassasie_et_hydrate': 'Rassasié et Hydraté'
+        'rassasie_et_hydrate': 'Rassasié & Hydraté'
     };
 
     // Légendes d'extensions

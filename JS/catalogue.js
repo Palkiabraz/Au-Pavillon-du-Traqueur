@@ -218,7 +218,8 @@ const extraKeywords = {
     'molosse': 'fleche tir',
     'ours': 'piege',
     'renard': 'aspect',
-    'rongeur': 'morsure piqure'
+    'rongeur': 'morsure piqure',
+    'draconien inferieur': 'affinite'
 };
 
 // Bouton "Recherche"

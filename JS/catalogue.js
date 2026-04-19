@@ -328,6 +328,7 @@ applyFilters();
     const expansionNames = {
         'core': 'le jeu de base',
         'shadowlands': 'Shadowlands',
+        'dragonflight': 'Dragonflight',
         'rassasie_et_hydrate': 'Rassasié & Hydraté'
     };
 
@@ -335,6 +336,7 @@ applyFilters();
     const extensionCaptions = {
         'core': 'Disponible dans le jeu de base',
         'shadowlands': 'Disponible dans l\'extension mineure "Shadowlands"',
+        'dragonflight': 'Disponible dans l\'extension mineure "Dragonflight"',
         'rassasie_et_hydrate': 'Disponible dans l\'extension majeure "Rassasié & Hydraté"'
     };
 

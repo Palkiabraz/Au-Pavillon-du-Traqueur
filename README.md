@@ -5,3 +5,4 @@
 <ins>15 Mars 2026 :</ins> Sortie de l'extension mineure "Shadowlands"<br>
 <ins>19 Avril 2026 :</ins> Sortie de l'extension majeure "Rassasié & Hydraté"<br>
 <ins>17 Mai 2026 :</ins> Sortie de l'extension mineure "Dragonflight"<br>
+<ins>11 Octobre 2026 :</ins> Sortie de l'extension majeure "Champions du Pavillon"<br>

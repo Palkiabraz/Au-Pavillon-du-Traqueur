@@ -338,6 +338,7 @@ applyFilters();
         'core': 'le jeu de base',
         'shadowlands': 'Shadowlands',
         'dragonflight': 'Dragonflight',
+        'the_war_within': 'The War Within',
         'rassasie_et_hydrate': 'Rassasié & Hydraté',
         'champions_du_pavillon': 'Champions du Pavillon'
     };
@@ -347,6 +348,7 @@ applyFilters();
         'core': 'Disponible dans le jeu de base',
         'shadowlands': 'Disponible dans l\'extension mineure "Shadowlands"',
         'dragonflight': 'Disponible dans l\'extension mineure "Dragonflight"',
+        'the_war_within': 'Disponible dans l\'extension mineure "The War Within"',
         'rassasie_et_hydrate': 'Disponible dans l\'extension majeure "Rassasié & Hydraté"',
         'champions_du_pavillon': 'Disponible dans l\'extension majeure "Champions du Pavillon"'
     };

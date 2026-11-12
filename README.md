@@ -9,4 +9,4 @@
 <ins>15 Novembre 2026 :</ins> Sortie de l'extension mineure "The War Within"<br>
 
 *Saurez-vous trouver le secret caché du Pavillon du Traqueur ?*
-*<ins>Hint :</ins> Il faut attendre ...*
+*<ins>Indice :</ins> Il faut attendre ...*

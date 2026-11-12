@@ -378,7 +378,7 @@ applyFilters();
 
         let audio = calineAudio.get(img);
         if (!audio) {
-            audio = new Audio('./Sons/Caline.wav');
+            audio = new Audio('./Sons/CalineFR.mp3');
             calineAudio.set(img, audio);
         }
 

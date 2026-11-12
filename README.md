@@ -1,4 +1,4 @@
-*Un immense et sincère remerciement à tous les chasseuses et chasseresses qui prennent le temps de partir à l'aventure !*
+« Un immense et sincère remerciement à tous les chasseuses et chasseresses qui prennent le temps de partir à l'aventure ! »
 
 ### VOYAGE PARCOURU
 <ins>11 Janvier 2026 :</ins> Sortie (française) du jeu<br>
@@ -6,3 +6,7 @@
 <ins>19 Avril 2026 :</ins> Sortie de l'extension majeure "Rassasié & Hydraté"<br>
 <ins>17 Mai 2026 :</ins> Sortie de l'extension mineure "Dragonflight"<br>
 <ins>11 Octobre 2026 :</ins> Sortie de l'extension majeure "Champions du Pavillon"<br>
+<ins>15 Novembre 2026 :</ins> Sortie de l'extension mineure "The War Within"<br>
+
+*Saurez-vous trouver le secret caché du Pavillon du Traqueur ?*
+*<ins>Hint :</ins> Il faut attendre ...*

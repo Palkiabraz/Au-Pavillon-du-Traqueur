@@ -8,5 +8,5 @@
 <ins>11 Octobre 2026 :</ins> Sortie de l'extension majeure "Champions du Pavillon"<br>
 <ins>15 Novembre 2026 :</ins> Sortie de l'extension mineure "The War Within"<br>
 
-*Saurez-vous trouver le secret caché du Pavillon du Traqueur ?*
+*Saurez-vous trouver le secret caché du Pavillon du Traqueur ?* <br>
 *<ins>Indice :</ins> Il faut attendre ...*
